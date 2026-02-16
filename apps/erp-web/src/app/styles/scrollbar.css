@@ -1,0 +1,114 @@
+/* Custom scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3FB5B0;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #00918D;
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-color: #3FB5B0 transparent;
+  scrollbar-width: thin;
+}
+
+/* React Grid Layout Enhancements */
+.dashboard-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dashboard-scroll::-webkit-scrollbar-thumb {
+  background: #3FB5B0;
+  border-radius: 4px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-thumb:hover {
+  background: #00918D;
+}
+
+.dashboard-scroll {
+  scrollbar-color: #3FB5B0 transparent;
+  scrollbar-width: thin;
+}
+
+/* Grid Container */
+.react-grid-layout-container {
+  width: 100% !important;
+}
+
+/* Grid Item Styling */
+.react-grid-layout > div {
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.react-grid-layout > div:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dragging state */
+.react-grid-layout > div.react-grid-placeholder {
+  background: rgba(63, 181, 176, 0.1);
+  opacity: 0.5;
+  border-radius: 8px;
+  border: 2px dashed #3FB5B0;
+  z-index: 2;
+}
+
+/* Resize Handle */
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+  background-image: linear-gradient(135deg, transparent 50%, #3FB5B0 50%);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 10px 10px;
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.react-resizable-handle:hover {
+  opacity: 0.8;
+}
+
+.react-grid-layout > div.react-grid-item > .react-resizable-handle::after {
+  display: none;
+}
+
+/* Static items (non-draggable) */
+.react-grid-layout > div.static {
+  background-color: rgba(243, 244, 246, 0.5);
+  cursor: default;
+}
+
+/* During drag */
+.react-grid-layout > div.react-grid-item.react-grid-placeholder {
+  cursor: move;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  .react-resizable-handle {
+    width: 24px;
+    height: 24px;
+    background-size: 12px 12px;
+  }
+}
