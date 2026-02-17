@@ -1,3 +1,4 @@
+import { UserCog } from 'lucide-react';
 import GenderSplitChart from '../charts/GenderSplitChart';
 import EmployeesByGradeChart from '../charts/EmployeesByGradeChart';
 
@@ -26,8 +27,9 @@ export default function WorkforceOverview() {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 h-full flex flex-col" style={{ maxHeight: '580px' }}>
       <h2 className="text-[24px] font-medium leading-none mb-6 flex items-center gap-2" style={{ fontFamily: 'Poppins', color: 'var(--color-primary-darkest)' }}>
-        <span className="w-1 h-6 rounded" style={{ backgroundColor: 'var(--color-primary-darkest)' }}></span>
+        <UserCog size={24} color="#035F5B" />
         Workforce Overview
+        <div className="flex-1" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
       </h2>
 
       {/* Metrics Row */}
@@ -35,6 +37,7 @@ export default function WorkforceOverview() {
         {metrics.map((metric, idx) => (
           <div 
             key={idx} 
+            className="transition-all duration-200 hover:shadow-lg hover:scale-105 cursor-pointer"
             style={{ 
               width: '90%',
               height: '133px',

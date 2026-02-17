@@ -7,6 +7,7 @@ import Breadcrumb from './components/Breadcrumb';
 import WidgetsPanel from './components/WidgetsPanel';
 import { getWidgetComponent, hasWidgetComponent } from './utils/widgetComponentMap';
 import { AVAILABLE_WIDGETS } from './constants/widgets';
+import { getDefaultLayout } from '../../utils/layoutManager';
 
 const GRID_COLS = 12;
 const ROW_HEIGHT = 30;
@@ -91,15 +92,7 @@ export default function Dashboard() {
 
   // Reset to default layout (restores only the 7 main dashboard widgets)
   const handleResetLayout = useCallback(() => {
-    const defaultLayout = [
-      { i: 'workforce', x: 0, y: 0, w: 8, h: 3.65, minW: 4, minH: 4 },
-      { i: 'recruitment', x: 8, y: 0, w: 4, h: 3.65, minW: 3, minH: 4 },
-      { i: 'attendance', x: 0, y: 5, w: 4, h: 3, minW: 3, minH: 3 },
-      { i: 'training', x: 4, y: 5, w: 4, h: 3, minW: 3, minH: 3 },
-      { i: 'turnover', x: 8, y: 5, w: 4, h: 3, minW: 3, minH: 3 },
-      { i: 'performance', x: 0, y: 9, w: 4, h: 2.3, minW: 3, minH: 3 },
-      { i: 'payroll', x: 4, y: 9, w: 4, h: 1.9, minW: 3, minH: 3 },
-    ];
+    const defaultLayout = getDefaultLayout();
     handleLayoutChange(defaultLayout);
   }, [handleLayoutChange]);
 
@@ -176,7 +169,7 @@ export default function Dashboard() {
             <div
               ref={containerRef}
               className="flex-1 pr-4 overflow-y-auto dashboard-scroll rounded-b-xl"
-              style={{ backgroundColor: 'var(--color-primary-lightest)', paddingBottom: '60px' }}
+              style={{ backgroundColor: 'var(--color-primary-lightest)', paddingBottom: '80px' }}
             >
               {gridReady ? (
                 <ReactGridLayout

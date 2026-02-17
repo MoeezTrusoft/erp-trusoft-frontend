@@ -1,3 +1,4 @@
+import { UserCog } from 'lucide-react';
 import RecruitmentTrendChart from '../charts/RecruitmentTrendChart';
 
 export default function RecruitmentMetrics() {
@@ -5,8 +6,9 @@ export default function RecruitmentMetrics() {
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 h-full flex flex-col" style={{ maxHeight: '630px' }}>
       {/* Main Heading */}
       <h2 className="text-[24px] font-medium leading-none mb-6 flex items-center gap-2" style={{ fontFamily: 'Poppins', color: 'var(--color-primary-darkest)' }}>
-        <span className="w-1 h-6 rounded" style={{ backgroundColor: 'var(--color-primary-darkest)' }}></span>
+        <UserCog size={24} color="#035F5B" />
         Recruitment Metrics
+        <div className="flex-1" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
       </h2>
 
       <div className="flex-1 flex flex-col">
@@ -39,7 +41,8 @@ export default function RecruitmentMetrics() {
         <div className="flex gap-2 mt-auto justify-center">
 
           {/* Open Positions Button */}
-          <div
+          <button
+            className="transition-all duration-200 hover:shadow-md hover:scale-105"
             style={{
               // flex: 1,
               width:'200px',
@@ -50,7 +53,9 @@ export default function RecruitmentMetrics() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '10px'
+              gap: '10px',
+              border: 'none',
+              cursor: 'pointer',
             }}
           >
             <span
@@ -65,10 +70,11 @@ export default function RecruitmentMetrics() {
             >
               Open Positions 23
             </span>
-          </div>
+          </button>
 
           {/* Filled Positions Button */}
-          <div
+          <button
+            className="transition-all duration-200 hover:shadow-md hover:scale-105"
             style={{
               // flex: 1,
               width:'200px',
@@ -79,7 +85,9 @@ export default function RecruitmentMetrics() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '10px'
+              gap: '10px',
+              border: 'none',
+              cursor: 'pointer',
             }}
           >
             <span
@@ -94,7 +102,7 @@ export default function RecruitmentMetrics() {
             >
               Filled Positions 41
             </span>
-          </div>
+          </button>
         </div>
       </div>
     </div>

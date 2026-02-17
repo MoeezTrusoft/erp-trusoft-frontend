@@ -1,4 +1,51 @@
+import {
+  UserCog,
+  UserPlus,
+  FileCheck2,
+  FileText,
+  Banknote,
+  CalendarRange,
+  Target,
+  MoreHorizontal,
+  Users,
+} from 'lucide-react';
+
 export default function QuickActionsWidget() {
+  const btnStyle = {
+    backgroundColor: 'rgba(179, 226, 222, 0.4)',
+    border: '1px solid var(--color-primary-darkest)',
+    borderRadius: '6px',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: '12px',
+    padding: '0 16px',
+    cursor: 'pointer',
+    transition: 'opacity 0.2s ease',
+    width: '100%',
+    height: '63px',
+  };
+
+  const labelStyle = {
+    fontFamily: 'Poppins',
+    fontWeight: 400,
+    fontSize: '16px',
+    lineHeight: '100%',
+    letterSpacing: '0%',
+    color: '#333333',
+  };
+
+  const iconStyle = {
+    color: '#035F5B',
+    fontSize: '22px', // Kept for compatibility if anything else uses it, but SVGs use width/height
+    width: '24px',
+    height: '24px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  };
+
   return (
     <div className="px-5 pb-5 overflow-y-auto h-full">
       {/* Widget Heading */}
@@ -7,191 +54,104 @@ export default function QuickActionsWidget() {
         style={{
           fontFamily: 'Poppins',
           color: 'var(--color-primary-darkest)',
-          padding: '24px 12px 24px 8px',
+          padding: '24px 12px 36px 8px',
         }}
       >
-        <span
-          className="w-1 h-6 rounded"
-          style={{ backgroundColor: 'var(--color-primary-darkest)' }}
-        ></span>
+        <Users size={28} color="#035F5B" />
         Quick Actions
+        <div
+          className="flex-1"
+          style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }}
+        />
       </h2>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2" style={{ columnGap: '12px', rowGap: '32px' }}>
         <button
-          className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity p-3 rounded-lg"
-          style={{
-            backgroundColor: 'var(--color-primary-lightest)',
-            border: '1px solid var(--color-primary-lightest)',
-            opacity: 0.7,
-          }}
+          style={btnStyle}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <span className="text-xl">👤</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'center',
-            }}
-          >
-            Add Employee
+          <span style={iconStyle}>
+            <UserPlus size={24} color="#035F5B" />
           </span>
+          <span style={labelStyle}>Add Employee</span>
         </button>
+
         <button
-          className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity p-3 rounded-lg"
-          style={{
-            backgroundColor: 'var(--color-primary-lightest)',
-            border: '1px solid var(--color-primary-lightest)',
-            opacity: 0.7,
-          }}
+          style={btnStyle}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <span className="text-xl">✓</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'center',
-            }}
-          >
-            Approve Leave
+          <span style={iconStyle}>
+            <FileCheck2 size={24} color="#035F5B" />
           </span>
+          <span style={labelStyle}>Approve Leave</span>
         </button>
+
         <button
-          className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity p-3 rounded-lg"
-          style={{
-            backgroundColor: 'var(--color-primary-lightest)',
-            border: '1px solid var(--color-primary-lightest)',
-            opacity: 0.7,
-          }}
+          style={btnStyle}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <span className="text-xl">📋</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'center',
-            }}
-          >
-            Create Requisition
+          <span style={iconStyle}>
+            <FileText size={24} color="#035F5B" />
           </span>
+          <span style={labelStyle}>Create Requisition</span>
         </button>
+
         <button
-          className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity p-3 rounded-lg"
-          style={{
-            backgroundColor: 'var(--color-primary-lightest)',
-            border: '1px solid var(--color-primary-lightest)',
-            opacity: 0.7,
-          }}
+          style={btnStyle}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <span className="text-xl">💰</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'center',
-            }}
-          >
-            Run Payroll
+          <span style={iconStyle}>
+            <Banknote size={24} color="#035F5B" />
           </span>
+          <span style={labelStyle}>Run Payroll</span>
         </button>
+
         <button
-          className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity p-3 rounded-lg"
-          style={{
-            backgroundColor: 'var(--color-primary-lightest)',
-            border: '1px solid var(--color-primary-lightest)',
-            opacity: 0.7,
-          }}
+          style={btnStyle}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <span className="text-xl">📅</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'center',
-            }}
-          >
-            Schedule Interview
+          <span style={iconStyle}>
+            <CalendarRange size={24} color="#035F5B" />
           </span>
+          <span style={labelStyle}>Schedule Interview</span>
         </button>
+
         <button
-          className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity p-3 rounded-lg"
-          style={{
-            backgroundColor: 'var(--color-primary-lightest)',
-            border: '1px solid var(--color-primary-lightest)',
-            opacity: 0.7,
-          }}
+          style={btnStyle}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <span className="text-xl">🎯</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'center',
-            }}
-          >
-            Create Goal Cycle
+          <span style={iconStyle}>
+            <Target size={24} color="#035F5B" />
           </span>
+          <span style={labelStyle}>Create Goal Cycle</span>
         </button>
+
         <button
-          className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity p-3 rounded-lg"
-          style={{
-            backgroundColor: 'var(--color-primary-lightest)',
-            border: '1px solid var(--color-primary-lightest)',
-            opacity: 0.7,
-          }}
+          style={btnStyle}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <span className="text-xl">📅</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'center',
-            }}
-          >
-            Schedule Interview
+          <span style={iconStyle}>
+            <CalendarRange size={24} color="#035F5B" />
           </span>
+          <span style={labelStyle}>Schedule Interview</span>
         </button>
+
         <button
-          className="flex items-center justify-center gap-2 hover:opacity-90 transition-opacity p-3 rounded-lg"
-          style={{
-            backgroundColor: 'var(--color-primary-lightest)',
-            border: '1px solid var(--color-primary-lightest)',
-            opacity: 0.7,
-          }}
+          style={{ ...btnStyle, justifyContent: 'center' }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '12px',
-              lineHeight: '100%',
-              color: '#333333',
-            }}
-          >
-            More
+          <span style={labelStyle}>More</span>
+          <span style={{ ...iconStyle, width: 'auto' }}>
+            <MoreHorizontal size={24} color="#035F5B" />
           </span>
-          <span className="text-lg">•••</span>
         </button>
       </div>
     </div>

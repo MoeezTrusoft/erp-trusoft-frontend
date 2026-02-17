@@ -1,11 +1,11 @@
-import { Settings } from 'lucide-react';
+import { UserCog } from 'lucide-react';
 
 export default function PayrollSummary() {
   return (
     <div className="bg-white rounded-[17px] shadow-sm border border-gray-200 p-6 inline-block w-full" style={{ height: '290px' }}>
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <Settings className="w-5 h-5 text-[var(--color-primary-medium)] shrink-0" />
+        <UserCog size={24} color="#035F5B" />
         <h2
           className="text-[24px] font-medium text-[var(--color-primary-darkest)] leading-none shrink-0"
           style={{ fontFamily: 'Poppins' }}

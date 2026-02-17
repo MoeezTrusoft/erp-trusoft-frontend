@@ -1,32 +1,31 @@
 import ReactECharts from 'echarts-for-react';
 
 export default function CircularProgress({ value = 72, isHalfCircle = false, color1, color2 }) {
-  const defaultColor1 = '#00918D';
-  const defaultColor2 = '#EDEDED';
+  const activeColor = color1 || '#3AA39F'; // Teal color
+  const inactiveColor = color2 || '#F3F4F6'; // Light gray background
+  const textColor = '#035F5B';
 
-  const activeColor = color1 || defaultColor1;
-  const inactiveColor = color2 || defaultColor2;
+  const strokeWidth = 24; // Thicker stroke for Figma-like appearance
 
   const option = isHalfCircle
     ? {
+        // Half Circle: Two static concentric arcs (Dark Outer, Light Inner)
         series: [
-          // ── Outer arc: dark teal progress ──
+          // Outer Arc (Dark Teal)
           {
             type: 'gauge',
             startAngle: 180,
-            endAngle: 290,
-            radius: '90%',
-            center: ['50%', '75%'],
+            endAngle: 0,
+            radius: '100%',
+            center: ['50%', '88%'],
             min: 0,
             max: 100,
+            splitNumber: 1,
             axisLine: {
+              show: true,
               lineStyle: {
-                width: 36,
-                color: [
-                  [value / 100, activeColor],
-                  [1, 'transparent'],
-                ],
-                roundCap: true,
+                width: 24,
+                color: [[1, '#00918D']], // Dark Teal
               },
             },
             pointer: { show: false },
@@ -34,22 +33,23 @@ export default function CircularProgress({ value = 72, isHalfCircle = false, col
             splitLine: { show: false },
             axisLabel: { show: false },
             detail: { show: false },
-            data: [{ value }],
+            data: [],
           },
-          // ── Inner arc: full light teal background ──
+          // Inner Arc (Light Teal)
           {
             type: 'gauge',
             startAngle: 180,
             endAngle: 0,
-            radius: '62%',
-            center: ['50%', '75%'],
+            radius: '72%',
+            center: ['50%', '88%'],
             min: 0,
             max: 100,
+            splitNumber: 1,
             axisLine: {
+              show: true,
               lineStyle: {
-                width: 30,
-                color: [[1, inactiveColor]],
-                roundCap: true,
+                width: 24,
+                color: [[1, '#B2DFDB']], // Light Teal
               },
             },
             pointer: { show: false },
@@ -61,44 +61,52 @@ export default function CircularProgress({ value = 72, isHalfCircle = false, col
               formatter: '{value}%',
               color: '#035F5B',
               fontSize: 32,
-              fontWeight: 700,
-              fontFamily: 'Poppins',
-              offsetCenter: [0, '45%'],
+              fontWeight: '700',
+              fontFamily: 'Poppins, sans-serif',
+              offsetCenter: [0, '-35%'],
             },
             data: [{ value }],
           },
         ],
       }
     : {
+        // Full Circle: Standard Donut Progress
         series: [
           {
             type: 'gauge',
             startAngle: 140,
             endAngle: -270,
-            radius: '85%',
+            radius: '100%',
             center: ['50%', '50%'],
             min: 0,
             max: 100,
-            axisLine: {
-              lineStyle: {
-                width: 20,
-                color: [
-                  [value / 100, activeColor],
-                  [1, inactiveColor],
-                ],
-              },
+            splitNumber: 1,
+            itemStyle: {
+              color: activeColor,
+            },
+            progress: {
+              show: true,
+              roundCap: true,
+              width: strokeWidth,
             },
             pointer: { show: false },
+            axisLine: {
+              roundCap: true,
+              lineStyle: {
+                width: strokeWidth,
+                color: [[1, inactiveColor]],
+              },
+            },
             axisTick: { show: false },
             splitLine: { show: false },
             axisLabel: { show: false },
             detail: {
               valueAnimation: true,
               formatter: '{value}%',
-              color: '#035F5B',
+              color: textColor,
               fontSize: 32,
-              fontWeight: 600,
-              fontFamily: 'Poppins',
+              fontWeight: '700',
+              fontFamily: 'Poppins, sans-serif',
               offsetCenter: [0, '0%'],
             },
             data: [{ value }],
@@ -106,12 +114,26 @@ export default function CircularProgress({ value = 72, isHalfCircle = false, col
         ],
       };
 
+  const height = isHalfCircle ? '180px' : '160px';
+  const width = isHalfCircle ? '200px' : '160px';
+
   return (
     <div
-      className={isHalfCircle ? 'w-64 h-36' : 'w-32 h-32'}
-      style={{ transform: 'scale(1.015)' }}
+      style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
     >
-      <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />
+      <div style={{ width: width, height: height }}>
+        <ReactECharts
+          option={option}
+          style={{ height: '100%', width: '100%' }}
+          opts={{ renderer: 'svg' }}
+        />
+      </div>
     </div>
   );
 }

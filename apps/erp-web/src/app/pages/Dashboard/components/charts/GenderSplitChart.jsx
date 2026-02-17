@@ -11,8 +11,8 @@ export default function GenderSplitChart() {
     graphic: [
     {
       type: 'text',
-      left: 100,
-      top: 162,
+      left: '26%',
+      top: '40%',
       style: {
         text: 'Gender\nSplit',
         textAlign: 'center',
@@ -98,7 +98,7 @@ export default function GenderSplitChart() {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '18px'
+          gap: '18px',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

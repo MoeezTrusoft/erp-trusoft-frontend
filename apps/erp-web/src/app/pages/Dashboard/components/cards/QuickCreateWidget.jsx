@@ -1,6 +1,21 @@
+import { UserCog, FileText, User } from 'lucide-react';
+
 export default function QuickCreateWidget() {
+  const labelStyle = {
+    fontFamily: 'Poppins',
+    fontWeight: 400,
+    fontSize: '18px',
+    lineHeight: '100%',
+    letterSpacing: '0%',
+    color: '#333333',
+    textAlign: 'left',
+  };
+
+  const iconColor = '#035F5B';
+  const iconSize = 20;
+
   return (
-    <div className="px-5 pb-5 overflow-y-auto h-full">
+    <div className="px-3 pb-5 overflow-y-auto h-full">
       {/* Widget Heading */}
       <h2
         className="text-[24px] font-medium leading-none flex items-center gap-2"
@@ -10,85 +25,69 @@ export default function QuickCreateWidget() {
           padding: '24px 12px 24px 8px',
         }}
       >
-        <span
-          className="w-1 h-6 rounded"
-          style={{ backgroundColor: 'var(--color-primary-darkest)' }}
-        ></span>
+        <UserCog size={24} color="#035F5B" />
         Quick Create
+        <div
+          className="flex-1"
+          style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }}
+        />
       </h2>
 
-      <div className="space-y-2">
+      <div style={{ display: 'flex', flexDirection: 'column', rowGap: '20px' }}>
+        {/* 1st */}
         <button
-          className="w-full flex items-center transition-colors p-3 rounded-lg hover:bg-gray-50"
-          style={{ gap: '12px' }}
+          className="w-full flex items-center transition-colors hover:bg-gray-50"
+          style={{ gap: '12px', height: '44px', padding: '0 16px', borderRadius: '8px' }}
         >
-          <span className="text-lg flex-shrink-0">📋</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '14px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'left',
-            }}
-          >
-            New job requisition
-          </span>
+          <FileText size={iconSize} color={iconColor} className="flex-shrink-0" />
+          <span style={labelStyle}>New job requisition</span>
         </button>
+
+        {/* 2nd */}
         <button
-          className="w-full flex items-center transition-colors p-3 rounded-lg hover:bg-gray-50"
-          style={{ gap: '12px' }}
+          className="w-full flex items-center transition-colors hover:bg-gray-50"
+          style={{ gap: '12px', height: '44px', padding: '0 16px', borderRadius: '8px' }}
         >
-          <span className="text-lg flex-shrink-0">📚</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '14px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'left',
-            }}
-          >
-            New course
-          </span>
+          <FileText size={iconSize} color={iconColor} className="flex-shrink-0" />
+          <span style={labelStyle}>New course</span>
         </button>
+
+        {/* 3rd — keep full-bleed bg, bold text, primary color */}
         <button
-          className="w-full flex items-center transition-colors p-3 rounded-lg hover:bg-gray-50"
-          style={{ gap: '12px', backgroundColor: 'rgba(179, 226, 222, 0.2)' }}
+          className="w-full flex items-center transition-opacity hover:opacity-75"
+          style={{
+            gap: '12px',
+            height: '44px',
+            backgroundColor: 'rgba(179, 226, 222, 0.4)',
+            marginLeft: '-12px',
+            marginRight: '-12px',
+            width: 'calc(100% + 24px)',
+            padding: '0 28px',
+          }}
         >
-          <span className="text-lg flex-shrink-0">📄</span>
+          <FileText size={iconSize} color={iconColor} className="flex-shrink-0" />
           <span
             style={{
               fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '14px',
+              fontWeight: 500,
+              fontSize: '18px',
               lineHeight: '100%',
-              color: '#333333',
+              letterSpacing: '0%',
+              color: 'var(--color-primary-darkest)',
               textAlign: 'left',
             }}
           >
             New policy document
           </span>
         </button>
+
+        {/* 4th */}
         <button
-          className="w-full flex items-center transition-colors p-3 rounded-lg hover:bg-gray-50"
-          style={{ gap: '12px' }}
+          className="w-full flex items-center transition-colors hover:bg-gray-50"
+          style={{ gap: '12px', height: '44px', padding: '0 16px', borderRadius: '8px' }}
         >
-          <span className="text-lg flex-shrink-0">⏰</span>
-          <span
-            style={{
-              fontFamily: 'Poppins',
-              fontWeight: 400,
-              fontSize: '14px',
-              lineHeight: '100%',
-              color: '#333333',
-              textAlign: 'left',
-            }}
-          >
-            New shift rule
-          </span>
+          <User size={iconSize} color={iconColor} className="flex-shrink-0" />
+          <span style={labelStyle}>New shift rule</span>
         </button>
       </div>
     </div>

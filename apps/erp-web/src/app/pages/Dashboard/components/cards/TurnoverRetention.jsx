@@ -1,3 +1,4 @@
+import { UserCog } from 'lucide-react';
 import ReactECharts from 'echarts-for-react';
 
 export default function TurnoverRetention() {
@@ -19,20 +20,16 @@ export default function TurnoverRetention() {
     xAxis: {
       type: 'category',
       data: ['Sales', 'Support', 'Engineering', 'Production', 'HR'],
-      axisLine: { lineStyle: { color: '#E5E7EB' } },
+      axisLine: { show: true, lineStyle: { color: '#999999' } },
       axisTick: { show: false },
-      axisLabel: {
-        color: '#6B7280',
-        fontSize: 11,
-        fontFamily: 'Poppins',
-      },
+      axisLabel: { show: true, color: '#6B7280', fontSize: 11, fontFamily: 'Poppins' },
     },
     yAxis: {
       type: 'value',
-      axisLine: { show: false },
+      axisLine: { show: true, lineStyle: { color: '#999999' } },
       axisTick: { show: false },
       axisLabel: { show: false },
-      splitLine: { lineStyle: { color: '#F3F4F6' } },
+      splitLine: { show: false },
     },
     series: [
       {
@@ -56,7 +53,7 @@ export default function TurnoverRetention() {
   };
 
   const ProgressBar = ({ label, value, percent }) => (
-    <div style={{ width: '407px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+    <div style={{ width: '398px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
       <span className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Poppins' }}>{label}</span>
       <div className="flex items-center gap-2 w-full">
         <div className="flex-1 rounded-full overflow-hidden" style={{ height: '13px', backgroundColor: 'var(--color-primary-lightest)' }}>
@@ -74,9 +71,7 @@ export default function TurnoverRetention() {
     >
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <svg className="w-5 h-5 shrink-0 text-[var(--color-primary-medium)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
+        <UserCog size={24} color="#035F5B" />
         <h2
           className="text-[24px] font-medium text-[var(--color-primary-darkest)] leading-none shrink-0"
           style={{ fontFamily: 'Poppins' }}

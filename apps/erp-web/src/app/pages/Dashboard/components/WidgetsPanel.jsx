@@ -142,7 +142,7 @@ export default function WidgetsPanel({ open, onClose, currentLayout = [], onAddW
                       color: '#035F5B',
                     }}
                   >
-                    Available Widgets
+                    Quick Actions
                   </h2>
                   <svg
                     className={`w-6 h-6 transition-transform duration-300 ${expanded.availableWidgets ? 'rotate-180' : ''}`}
@@ -280,7 +280,7 @@ export default function WidgetsPanel({ open, onClose, currentLayout = [], onAddW
 
         {/* Floating Action Button */}
         <button
-          className="absolute bottom-20 right-8 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-105"
+          className="absolute bottom-10 right-8 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-105"
           style={{
             backgroundColor: '#035F5B',
             color: '#FFFFFF',

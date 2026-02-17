@@ -1,5 +1,5 @@
 import ReactECharts from 'echarts-for-react';
-import { GraduationCap } from 'lucide-react';
+import { UserCog } from 'lucide-react';
 
 export default function TrainingProgress() {
   const chartOption = {
@@ -67,10 +67,7 @@ export default function TrainingProgress() {
     >
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <GraduationCap
-          className="w-6 h-6 shrink-0"
-          style={{ color: 'var(--color-primary-medium)' }}
-        />
+        <UserCog size={24} color="#035F5B" />
         <h2
           className="text-[24px] font-medium leading-none shrink-0"
           style={{
