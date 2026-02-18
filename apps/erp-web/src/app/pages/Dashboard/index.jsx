@@ -176,7 +176,7 @@ export default function Dashboard() {
                   layout={layout}
                   onLayoutChange={handleLayoutChange}
                   width={width}
-                  cols={GRID_COLS}
+                  cols={width < 768 ? 1 : GRID_COLS}
                   rowHeight={ROW_HEIGHT}
                   containerPadding={GRID_MARGIN}
                   margin={GRID_MARGIN}
@@ -184,7 +184,7 @@ export default function Dashboard() {
                   preventCollision={false}
                   isDraggable={true}
                   isResizable={true}
-                  useCSSTransforms={true}
+                  useCSSTransforms={width >= 768}
                   className="react-grid-layout-container"
                   style={{ padding: '16px' }}
                 >

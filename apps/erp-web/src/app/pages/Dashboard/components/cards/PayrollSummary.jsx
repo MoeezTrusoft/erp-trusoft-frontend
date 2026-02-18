@@ -2,10 +2,12 @@ import { UserCog } from 'lucide-react';
 
 export default function PayrollSummary() {
   return (
-    <div className="bg-white rounded-[17px] shadow-sm border border-gray-200 p-6 inline-block w-full" style={{ height: '290px' }}>
+    <div className="p-6 w-full" style={{ height: '290px' }}>
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <UserCog size={24} color="#035F5B" />
+        <div style={{ flexShrink: 0, minWidth: '24px', minHeight: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <UserCog size={24} color="#035F5B" />
+        </div>
         <h2
           className="text-[24px] font-medium text-[var(--color-primary-darkest)] leading-none shrink-0"
           style={{ fontFamily: 'Poppins' }}

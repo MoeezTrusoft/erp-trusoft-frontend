@@ -27,7 +27,9 @@ export default function WorkforceOverview() {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 h-full flex flex-col" style={{ maxHeight: '580px' }}>
       <h2 className="text-[24px] font-medium leading-none mb-6 flex items-center gap-2" style={{ fontFamily: 'Poppins', color: 'var(--color-primary-darkest)' }}>
-        <UserCog size={24} color="#035F5B" />
+        <div style={{ flexShrink: 0, minWidth: '24px', minHeight: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <UserCog size={24} color="#035F5B" />
+        </div>
         Workforce Overview
         <div className="flex-1" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
       </h2>

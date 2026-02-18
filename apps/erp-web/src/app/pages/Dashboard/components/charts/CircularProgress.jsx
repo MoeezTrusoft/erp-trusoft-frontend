@@ -119,18 +119,15 @@ export default function CircularProgress({ value = 72, isHalfCircle = false, col
 
   return (
     <div
+      className="w-full h-full flex items-center justify-center"
       style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        minHeight: isHalfCircle ? '180px' : '160px',
       }}
     >
-      <div style={{ width: width, height: height }}>
+      <div style={{ width: '100%', height: '100%', maxWidth: width, maxHeight: height }}>
         <ReactECharts
           option={option}
-          style={{ height: '100%', width: '100%' }}
+          style={{ height: '100%', width: '100%', minHeight: isHalfCircle ? '180px' : '160px' }}
           opts={{ renderer: 'svg' }}
         />
       </div>

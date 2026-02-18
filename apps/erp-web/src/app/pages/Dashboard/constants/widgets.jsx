@@ -10,6 +10,7 @@ import {
   UserCheck,
   Zap,
   PlusSquare,
+  BarChart3,
 } from 'lucide-react';
 
 const ICON_SIZE = 20;
@@ -69,7 +70,7 @@ export const AVAILABLE_WIDGETS = {
     title: 'Payroll Summary',
     description: 'Overview of payroll information',
     icon: <Banknote size={ICON_SIZE} color={ICON_COLOR} />,
-    defaultLayout: { w: 4, h: 1.85, minW: 3, maxW: 4, minH: 1.85, maxH: 1.85 },
+    defaultLayout: { w: 4, h: 2, minW: 3, maxW: 4, minH: 2, maxH: 2 },
     removable: true,
   },
   myApprovals: {
@@ -93,25 +94,85 @@ export const AVAILABLE_WIDGETS = {
     title: 'Quick Create',
     description: 'Create new items quickly',
     icon: <PlusSquare size={ICON_SIZE} color={ICON_COLOR} />,
-    defaultLayout: { w: 4, h: 2.1, minW: 3, maxW: 4, minH: 2.1, maxH: 2.1 },
+    defaultLayout: { w: 4, h: 2.2, minW: 3, maxW: 4, minH: 2.2, maxH: 2.2 },
+    removable: true,
+  },
+  whosOnLeave: {
+    id: 'whosOnLeave',
+    title: "Who's On Leave This Week",
+    description: 'View employees on leave this week',
+    icon: <Users size={ICON_SIZE} color={ICON_COLOR} />,
+    defaultLayout: { w: 4, h: 3, minW: 4, maxW: 4, minH: 3, maxH: 3 },
+    removable: true,
+  },
+  departmentHeadcount: {
+    id: 'departmentHeadcount',
+    title: 'Department Headcount',
+    description: 'View department headcount distribution',
+    icon: <BarChart3 size={ICON_SIZE} color={ICON_COLOR} />,
+    defaultLayout: { w: 4, h: 1.6, minW: 3, maxW: 5, minH: 1.6, maxH: 1.6 },
+    removable: true,
+  },
+  workforceDemographics: {
+    id: 'workforceDemographics',
+    title: 'Workforce Demographics',
+    description: 'View workforce demographics by age groups and tenure',
+    icon: <Users size={ICON_SIZE} color={ICON_COLOR} />,
+    defaultLayout: { w: 6, h: 3.3, minW: 4, maxW: 6, minH: 3.3, maxH: 3.3 },
+    removable: true,
+  },
+  leaveTrend: {
+    id: 'leaveTrend',
+    title: 'Leave Trend (30 Days)',
+    description: 'View leave trends over the last 30 days',
+    icon: <TrendingUp size={ICON_SIZE} color={ICON_COLOR} />,
+    defaultLayout: { w: 6, h: 3, minW: 4, maxW: 6, minH: 3, maxH: 3 },
+    removable: true,
+  },
+  openPositions: {
+    id: 'openPositions',
+    title: 'Open Positions',
+    description: 'Track open job positions and average time to fill',
+    icon: <Briefcase size={ICON_SIZE} color={ICON_COLOR} />,
+    defaultLayout: { w: 6, h: 3, minW: 4, maxW: 6, minH: 3, maxH: 3 },
+    removable: true,
+  },
+  upcomingInterviews: {
+    id: 'upcomingInterviews',
+    title: 'Upcoming Interviews',
+    description: 'View upcoming interview schedule',
+    icon: <CalendarCheck size={ICON_SIZE} color={ICON_COLOR} />,
+    defaultLayout: { w: 6, h: 3, minW: 4, maxW: 6, minH: 3, maxH: 3 },
+    removable: true,
+  },
+  payslipsDeliveredStatus: {
+    id: 'payslipsDeliveredStatus',
+    title: 'Payslips Delivered Status',
+    description: 'Track payslip delivery status and statistics',
+    icon: <Banknote size={ICON_SIZE} color={ICON_COLOR} />,
+    defaultLayout: { w: 6, h: 2.3, minW: 4, maxW: 6, minH: 2.3, maxH: 2.3 },
+    removable: true,
+  },
+  reviewsStatus: {
+    id: 'reviewsStatus',
+    title: 'Reviews Status',
+    description: 'View performance reviews status overview',
+    icon: <Award size={ICON_SIZE} color={ICON_COLOR} />,
+    defaultLayout: { w: 4, h: 2.2, minW: 4, maxW: 4, minH: 2.2, maxH: 2.2 },
     removable: true,
   },
 };
 
 
-// Get all available widget IDs
 export const getAllWidgetIds = () => Object.keys(AVAILABLE_WIDGETS);
 
-// Get widget metadata by ID
 export const getWidgetMetadata = (widgetId) => AVAILABLE_WIDGETS[widgetId];
 
-// Get list of widgets that are currently available to add (not in current layout)
 export const getAvailableWidgetsForAdding = (currentLayout) => {
   const currentWidgetIds = new Set(currentLayout.map(item => item.i));
   return getAllWidgetIds().filter(widgetId => !currentWidgetIds.has(widgetId));
 };
 
-//  Get display info for available widgets
 export const getAvailableWidgetsInfo = (currentLayout) => {
   return getAvailableWidgetsForAdding(currentLayout).map(widgetId => ({
     ...AVAILABLE_WIDGETS[widgetId],

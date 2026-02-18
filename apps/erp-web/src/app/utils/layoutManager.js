@@ -73,7 +73,7 @@ export const getDefaultLayout = () => [
   { i: 'turnover', x: 8, y: 5, w: 4, h: 3, minW: 3, maxW: 5, minH: 3, maxH: 3 },
 
   { i: 'performance', x: 0, y: 9, w: 4, h: 2.4, minW: 3, maxW: 5, minH: 2.4, maxH: 2.4 },
-  { i: 'payroll', x: 4, y: 9, w: 4, h: 1.85, minW: 3, maxW: 4, minH: 1.85, maxH: 1.85 },
+  { i: 'payroll', x: 4, y: 9, w: 4, h: 2, minW: 3, maxW: 4, minH: 2, maxH: 2 },
 ];
 
 // Calculate grid item height in pixels

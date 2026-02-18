@@ -25,7 +25,9 @@ export default function QuickCreateWidget() {
           padding: '24px 12px 24px 8px',
         }}
       >
-        <UserCog size={24} color="#035F5B" />
+        <div style={{ flexShrink: 0, minWidth: '24px', minHeight: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <UserCog size={24} color="#035F5B" />
+        </div>
         Quick Create
         <div
           className="flex-1"

@@ -9,6 +9,7 @@ export function RouterProvider() {
         <Routes>
           {/* Redirect root to dashboard */}
           <Route path="/" element={<Navigate to="/hr/dashboard" replace />} />
+          
 
           {/* All other routes */}
           {routes.map((route) => (

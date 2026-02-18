@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UserCheck } from 'lucide-react';
+import { UserCog } from 'lucide-react';
 
 export default function MyPendingApprovalsWidget() {
   const cardStyle = {
@@ -115,7 +115,9 @@ export default function MyPendingApprovalsWidget() {
           padding: '24px 12px 24px 8px',
         }}
       >
-        <UserCheck size={28} color="#035F5B" />
+        <div style={{ flexShrink: 0, minWidth: '28px', minHeight: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <UserCog size={28} color="#035F5B" />
+        </div>
         My Pending Approvals
         <div
           className="flex-1"
@@ -124,7 +126,7 @@ export default function MyPendingApprovalsWidget() {
       </h2>
 
       {/* Leave Request */}
-      <div className="mb-4">
+      <div className="mb-3">
         <h4 style={sectionHeadingStyle}>Leave Request</h4>
         <div style={cardStyle}>
           <div className="flex items-center justify-between gap-2">
@@ -138,7 +140,7 @@ export default function MyPendingApprovalsWidget() {
       </div>
 
       {/* Timesheet */}
-      <div className="mb-4">
+      <div className="mb-3">
         <h4 style={sectionHeadingStyle}>Timesheet</h4>
         <div style={cardStyle}>
           <div className="flex items-center justify-between gap-2">
@@ -152,7 +154,7 @@ export default function MyPendingApprovalsWidget() {
       </div>
 
       {/* Claim */}
-      <div className="mb-4">
+      <div className="mb-3">
         <h4 style={sectionHeadingStyle}>Claim</h4>
         <div style={cardStyle}>
           <div className="flex items-center justify-between gap-2">

@@ -13,7 +13,9 @@ export default function PerformanceSummary() {
     >
       {/* Header */}
       <div className="flex items-center gap-3 mb-2 px-6 py-4">
-        <UserCog size={24} color="#035F5B" />
+        <div style={{ flexShrink: 0, minWidth: '24px', minHeight: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <UserCog size={24} color="#035F5B" />
+        </div>
         <h2
           className="text-[24px] font-medium leading-none shrink-0"
           style={{ fontFamily: 'Poppins', color: 'var(--color-primary-darkest)' }}
@@ -27,7 +29,7 @@ export default function PerformanceSummary() {
       </div>
 
       {/* Content */}
-      <div className="flex items-center justify-center flex-1 px-5 pb-4" style={{ gap: '24px' }}>
+      <div className="flex flex-col md:flex-row items-center justify-center flex-1 px-5 pb-4 gap-4 md:gap-6">
         {/* Left: Goal Completion */}
         <div
           className="flex flex-col items-center justify-center flex-1"
@@ -48,8 +50,9 @@ export default function PerformanceSummary() {
           </p>
         </div>
 
-        {/* Vertical Divider */}
-        <div style={{ width: '1px', flexShrink: 0, height: '60%', backgroundColor: '#E5E7EB' }} />
+        {/* Divider - Horizontal on mobile, Vertical on desktop */}
+        <div className="hidden md:block w-[1px] h-[60%] bg-gray-200 shrink-0" />
+        <div className="block md:hidden w-[60%] h-[1px] bg-gray-200 shrink-0 my-2" />
 
         {/* Right: Details */}
         <div
