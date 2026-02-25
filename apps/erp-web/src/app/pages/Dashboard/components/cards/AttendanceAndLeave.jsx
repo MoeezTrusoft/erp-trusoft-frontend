@@ -19,7 +19,7 @@ export default function AttendanceAndLeave() {
         >
           Attendance & Leave
         </h2>
-        <div className="flex-1" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
+        <div className="flex-1" style={{ height: '1px', backgroundColor: '#d3e0df' }} />
       </div>
 
       {/* Today's Absences */}
@@ -60,7 +60,7 @@ export default function AttendanceAndLeave() {
       </div>
 
       {/* Divider */}
-      <div className="my-3" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
+      <div className="my-3" style={{ height: '1px', backgroundColor: '#d3e0df' }} />
 
       {/* Monthly Leave Days */}
       <div className="flex-1 flex flex-col items-center">

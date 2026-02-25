@@ -43,8 +43,7 @@ export default function DepartmentHeadcountWidget() {
           style={{
             flex: 1,
             height: '1px',
-            backgroundColor: 'var(--color-primary-darkest)',
-            opacity: 0.4,
+            backgroundColor: '#d3e0df',
           }}
         />
       </div>

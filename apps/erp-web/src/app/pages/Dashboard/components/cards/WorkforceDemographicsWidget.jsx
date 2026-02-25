@@ -40,7 +40,7 @@ export default function WorkforceDemographicsWidget() {
             Workforce Demographics
           </h2>
           {/* Horizontal rule stretching to the right */}
-          <div style={{ flex: 1, height: '1px', backgroundColor: '#035F5B', opacity: 0.4 }} />
+          <div style={{ flex: 1, height: '1px', backgroundColor: '#d3e0df' }} />
         </div>
 
         {/* ── Filter pill + label ── */}

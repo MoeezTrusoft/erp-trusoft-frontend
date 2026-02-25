@@ -11,7 +11,7 @@ export default function GenderSplitChart() {
     graphic: [
     {
       type: 'text',
-      left: '26%',
+      left: '19%',
       top: '40%',
       style: {
         text: 'Gender\nSplit',

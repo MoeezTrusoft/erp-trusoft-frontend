@@ -19,6 +19,12 @@ body {
   box-sizing: border-box;
 }
 
+/* Remove focus outline on recharts SVG and interactive elements */
+svg:focus,
+svg *:focus {
+  outline: none;
+}
+
 /* Hide default scrollbar on all elements except .dashboard-scroll */
 *:not(.dashboard-scroll)::-webkit-scrollbar {
   display: none;

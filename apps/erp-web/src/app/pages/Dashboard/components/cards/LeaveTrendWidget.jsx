@@ -18,7 +18,7 @@ export default function LeaveTrendWidget() {
         >
           Leave Trend (30 Days)
         </h2>
-        <div className="flex-1" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
+        <div className="flex-1" style={{ height: '1px', backgroundColor: '#d3e0df' }} />
       </div>
 
       {/* Chart */}

@@ -19,7 +19,7 @@ export default function OpenPositionsWidget() {
           >
             Open Positions
           </h2>
-          <div className="flex-1" style={{ height: '1px', backgroundColor: '#035F5B' }} />
+          <div className="flex-1" style={{ height: '1px', backgroundColor: '#d3e0df' }} />
         </div>
 
         {/* View All Button */}

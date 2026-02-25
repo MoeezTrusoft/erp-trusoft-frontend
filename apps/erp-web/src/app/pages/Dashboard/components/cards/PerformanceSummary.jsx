@@ -24,7 +24,7 @@ export default function PerformanceSummary() {
         </h2>
         <div
           className="flex-1"
-          style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)', opacity: 0.2 }}
+          style={{ height: '1px', backgroundColor: '#d3e0df' }}
         />
       </div>
 

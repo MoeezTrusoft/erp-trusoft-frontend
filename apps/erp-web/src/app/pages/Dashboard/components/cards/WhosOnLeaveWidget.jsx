@@ -111,7 +111,7 @@ export default function WhosOnLeaveWidget() {
           Who's On Leave This Week
         </h2>
         {/* Divider line */}
-        <div style={{ flex: 1, height: '1px', backgroundColor: '#035F5B', opacity: 0.4 }} />
+        <div style={{ flex: 1, height: '1px', backgroundColor: '#d3e0df' }} />
       </div>
 
       {/* My Team / All Employees Toggle */}

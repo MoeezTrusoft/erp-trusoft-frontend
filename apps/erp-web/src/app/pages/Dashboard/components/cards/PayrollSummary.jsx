@@ -14,7 +14,7 @@ export default function PayrollSummary() {
         >
           Payroll Summary
         </h2>
-        <div className="flex-1" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
+        <div className="flex-1" style={{ height: '1px', backgroundColor: '#d3e0df' }} />
       </div>
 
       {/* Next Payroll Date */}
@@ -35,7 +35,7 @@ export default function PayrollSummary() {
 
       <div
         className="w-full"
-        style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }}
+        style={{ height: '1px', backgroundColor: '#d3e0df' }}
       />
 
       {/* Status */}
@@ -45,7 +45,7 @@ export default function PayrollSummary() {
           Processing
         </span>
       </div>
-      <div className="w-full" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
+      <div className="w-full" style={{ height: '1px', backgroundColor: '#d3e0df' }} />
 
       {/* Approvals */}
       <div className="flex flex-wrap gap-2 pt-6">

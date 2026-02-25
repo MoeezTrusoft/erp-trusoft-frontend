@@ -3,32 +3,52 @@ import ReviewsStatusChart from '../charts/ReviewsStatusChart';
 
 export default function ReviewsStatusWidget() {
   return (
-    <div className="p-6 flex flex-col" style={{ height: '100%', minHeight: '320px' }}>
-      {/* Header */}
-      <div className="flex items-center justify-between gap-3 mb-6">
-        <div className="flex items-center gap-3 flex-1 min-w-0">
-          <div style={{ flexShrink: 0, minWidth: '24px', minHeight: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <UserCog size={24} color="#035F5B" />
-          </div>
-          <h2
-            className="text-[24px] font-medium leading-none shrink-0"
-            style={{ fontFamily: 'Poppins', color: '#035F5B' }}
-          >
-            Reviews Status
-          </h2>
-          <div className="flex-1" style={{ height: '1px', backgroundColor: '#035F5B' }} />
+    <div
+      className="flex flex-col p-6"
+      style={{ height: '100%', minHeight: '320px' }}
+    >
+      {/* Header: icon + title + separator line */}
+      <div className="flex items-center gap-3 mb-5 flex-1 min-w-0" style={{ flex: '0 0 auto' }}>
+        <div
+          style={{
+            flexShrink: 0,
+            width: 24,
+            height: 24,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <UserCog size={24} color="#00665e" />
         </div>
+        <h2
+          className="text-[24px] font-semibold shrink-0"
+          style={{ fontFamily: 'Poppins', color: '#00665e' }}
+        >
+          Reviews Status
+        </h2>
+        <div
+          className="flex-1 min-h-0"
+          style={{ height: '1px', backgroundColor: '#d3e0df', minWidth: 0 }}
+        />
+      </div>
 
-        {/* View All Reviews Button */}
+      {/* Chart row: donut + legend */}
+      <div style={{ flex: 1, minHeight: 0, marginBottom: 16 }}>
+        <ReviewsStatusChart />
+      </div>
+
+      {/* View All Reviews — bottom right */}
+      <div style={{ display: 'flex', justifyContent: 'flex-end', flex: '0 0 auto' }}>
         <button
           style={{
             fontFamily: 'Poppins',
             fontSize: '14px',
             fontWeight: 500,
-            color: '#fff',
-            backgroundColor: '#64E2D3',
+            color: '#FFFFFF',
+            background: 'linear-gradient(90deg, #58d6c6 0%, #20a397 100%)',
             border: 'none',
-            borderRadius: '97px',
+            borderRadius: '12px',
             padding: '8px 16px',
             cursor: 'pointer',
             outline: 'none',
@@ -41,11 +61,6 @@ export default function ReviewsStatusWidget() {
           View All Reviews
           <ArrowRight size={16} />
         </button>
-      </div>
-
-      {/* Chart */}
-      <div style={{ flex: 1 }}>
-        <ReviewsStatusChart />
       </div>
     </div>
   );

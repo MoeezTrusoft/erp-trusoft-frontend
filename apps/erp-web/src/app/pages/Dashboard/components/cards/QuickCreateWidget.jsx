@@ -31,7 +31,7 @@ export default function QuickCreateWidget() {
         Quick Create
         <div
           className="flex-1"
-          style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }}
+          style={{ height: '1px', backgroundColor: '#d3e0df' }}
         />
       </h2>
 

@@ -83,7 +83,7 @@ export default function TrainingProgress() {
           className="flex-1"
           style={{
             height: '1px',
-            backgroundColor: 'var(--color-primary-darkest)'
+            backgroundColor: '#d3e0df'
           }}
         />
       </div>

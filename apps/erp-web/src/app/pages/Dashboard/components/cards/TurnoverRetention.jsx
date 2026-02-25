@@ -80,7 +80,7 @@ export default function TurnoverRetention() {
         >
           Turnover & Retention
         </h2>
-        <div className="flex-1" style={{ height: '1px', backgroundColor: 'var(--color-primary-darkest)' }} />
+        <div className="flex-1" style={{ height: '1px', backgroundColor: '#d3e0df' }} />
       </div>
 
       {/* Progress Bars */}

@@ -36,7 +36,7 @@ export default function WidgetsPanel({ open, onClose, currentLayout = [], onAddW
   return (
     <>
       {/* Backdrop */}
-      {open && (
+      {/* {open && (
         <div
           className="fixed inset-0 z-40 transition-all duration-300"
           style={{
@@ -44,18 +44,18 @@ export default function WidgetsPanel({ open, onClose, currentLayout = [], onAddW
           }}
           onClick={onClose}
         />
-      )}
+      )} */}
 
       {/* Widget Panel - Level 1: Outer Wrapper (White) */}
       <div
-        className="fixed right-6 z-50 transition-all duration-300 ease-out flex flex-col"
+        className="fixed right-0 z-50 transition-all duration-300 ease-out flex flex-col  "
         style={{
-          top: '150px', 
+          top: '146px', 
           bottom: '0',
-          width: '532px',
+          width: '500px',
           backgroundColor: '#FFFFFF',
-          borderTopLeftRadius: '30px',
-          borderBottomLeftRadius: '30px',
+          borderTopLeftRadius: '18px',
+          borderBottomLeftRadius: '18px',
           boxShadow: '-6px 6px 11px 0px #33333326',
           transform: open ? 'translateX(0)' : 'translateX(calc(100% + 24px))',
           pointerEvents: open ? 'auto' : 'none',
@@ -116,7 +116,7 @@ export default function WidgetsPanel({ open, onClose, currentLayout = [], onAddW
         </div>
 
         {/* Scrollable Content Area */}
-        <div className="flex-1 overflow-y-auto pb-6 pt-2 dashboard-scroll">
+        <div className="flex-1 overflow-y-auto pb-6 pt-2 dashboard-scroll flex justify-center items-start">
           <div
             className="rounded-3xl space-y-4"
             style={{

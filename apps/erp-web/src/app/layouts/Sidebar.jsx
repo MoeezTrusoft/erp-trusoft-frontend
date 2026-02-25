@@ -451,8 +451,8 @@ export const Sidebar = () => {
   };
 
   return (
-    <div className={`sticky top-16 left-0 bottom-0 h-[calc(100vh-4rem)] z-40 transition-all duration-300 ease-in-out ${isCollapsed ? 'w-16' : 'w-72'
-      }`}>
+    <div className={`sticky top-16 left-0 bottom-0 h-[calc(100vh-4rem)] z-40 transition-all duration-300 ease-in-out 
+    ${isCollapsed ? 'min-w-16' : 'min-w-[18vw]'}`}>
 
       {/* Main Sidebar */}
       <aside
@@ -460,7 +460,7 @@ export const Sidebar = () => {
       >
         <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide pt-4">
           <nav className="flex flex-col h-full relative">
-            <div className="py-2">
+            <div className="py-2 max-h-[60%] overflow-y-auto">
               <div className="pt-2">
                 <MenuItem
                   icon={LayoutDashboard}

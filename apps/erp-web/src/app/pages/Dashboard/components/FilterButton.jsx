@@ -31,10 +31,10 @@ export default function FilterButton({ label }) {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center gap-2 h-[42px] px-[16px] py-[10px] text-sm font-medium text-gray-900 bg-[var(--color-primary-lighter)] rounded-[97px] hover:opacity-90 transition-opacity whitespace-nowrap"
+        className="flex items-center gap-1 sm:gap-2 h-9 sm:h-10 lg:h-[32px] px-3 sm:px-4 lg:px-[16px] py-2 sm:py-2 lg:py-[10px] text-xs sm:text-sm font-medium text-gray-900 bg-[var(--color-primary-lighter)] rounded-[97px] hover:opacity-90 transition-opacity whitespace-nowrap"
       >
         <svg
-          className="w-4 h-4 flex-shrink-0"
+          className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4 lg:h-4 flex-shrink-0"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -47,26 +47,26 @@ export default function FilterButton({ label }) {
           />
         </svg>
         <span>{label}</span>
-        <ChevronDown className="w-4 h-4 flex-shrink-0" />
+        <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4 lg:h-4 flex-shrink-0" />
       </button>
 
       {isOpen && (
         <div 
-          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[290px] rounded-[24px] shadow-lg z-50 flex flex-col p-5 gap-4 overflow-hidden"
+          className="absolute left-1/2 -translate-x-1/2 mt-2 sm:mt-3 w-72 sm:w-80 lg:w-[290px] rounded-lg sm:rounded-xl lg:rounded-[24px] shadow-lg z-50 flex flex-col p-3 sm:p-4 lg:p-5 gap-3 sm:gap-3 lg:gap-4 overflow-hidden max-h-[70vh] sm:max-h-[60vh] lg:max-h-[65vh]"
           style={{ backgroundColor: '#EDEDED' }}
         >
           {/* Scrollable inner content */}
           <div 
-            className="flex flex-col gap-4 max-h-[500px] overflow-y-auto dashboard-scroll"
+            className="flex flex-col gap-3 sm:gap-3 lg:gap-4 max-h-[calc(70vh-100px)] sm:max-h-[calc(60vh-100px)] lg:max-h-[calc(65vh-120px)] overflow-y-auto dashboard-scroll"
           >
             {/* Date Range */}
             <div 
-              className="w-full rounded-[16px] p-4 flex flex-col gap-3"
+              className="w-full rounded-[12px] sm:rounded-[14px] lg:rounded-[16px] p-3 sm:p-3 lg:p-4 flex flex-col gap-2 sm:gap-2.5 lg:gap-3"
               style={{ backgroundColor: 'var(--color-primary-lightest)' }}
             >
               <div className="flex items-center justify-between">
                 <span 
-                  className="text-[18px] font-semibold"
+                  className="text-sm sm:text-base lg:text-[18px] font-semibold"
                   style={{ 
                     color: 'var(--color-primary-darkest)',
                     fontFamily: 'Poppins'
@@ -74,12 +74,12 @@ export default function FilterButton({ label }) {
                 >
                   Date Range
                 </span>
-                <span className="text-xl">📅</span>
+                <span className="text-lg sm:text-xl lg:text-xl">📅</span>
               </div>
               <select
                 value={filters.dateRange}
                 onChange={(e) => handleChange('dateRange', e.target.value)}
-                className="w-full h-[38px] rounded-[8px] border-none bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full h-8 sm:h-9 lg:h-[38px] rounded-[6px] sm:rounded-[7px] lg:rounded-[8px] border-none bg-white px-2 sm:px-2.5 lg:px-3 text-xs sm:text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 style={{ fontFamily: 'Poppins' }}
               >
                 <option value="Last 30 days">Last 30 days</option>
@@ -90,12 +90,12 @@ export default function FilterButton({ label }) {
 
             {/* Department */}
             <div 
-              className="w-full rounded-[16px] p-4 flex flex-col gap-3"
+              className="w-full rounded-[12px] sm:rounded-[14px] lg:rounded-[16px] p-3 sm:p-3 lg:p-4 flex flex-col gap-2 sm:gap-2.5 lg:gap-3"
               style={{ backgroundColor: 'var(--color-primary-lightest)' }}
             >
               <div className="flex items-center justify-between">
                 <span 
-                  className="text-[18px] font-semibold"
+                  className="text-sm sm:text-base lg:text-[18px] font-semibold"
                   style={{ 
                     color: 'var(--color-primary-darkest)',
                     fontFamily: 'Poppins'
@@ -103,12 +103,12 @@ export default function FilterButton({ label }) {
                 >
                   Department
                 </span>
-                <span className="text-xl">🎧</span>
+                <span className="text-lg sm:text-xl lg:text-xl">🎧</span>
               </div>
               <select
                 value={filters.department}
                 onChange={(e) => handleChange('department', e.target.value)}
-                className="w-full h-[38px] rounded-[8px] border-none bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full h-8 sm:h-9 lg:h-[38px] rounded-[6px] sm:rounded-[7px] lg:rounded-[8px] border-none bg-white px-2 sm:px-2.5 lg:px-3 text-xs sm:text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 style={{ fontFamily: 'Poppins' }}
               >
                 <option value="support">support</option>
@@ -119,12 +119,12 @@ export default function FilterButton({ label }) {
 
             {/* Business Unit 1 */}
             <div 
-              className="w-full rounded-[16px] p-4 flex flex-col gap-3"
+              className="w-full rounded-[12px] sm:rounded-[14px] lg:rounded-[16px] p-3 sm:p-3 lg:p-4 flex flex-col gap-2 sm:gap-2.5 lg:gap-3"
               style={{ backgroundColor: 'var(--color-primary-lightest)' }}
             >
               <div className="flex items-center justify-between">
                 <span 
-                  className="text-[18px] font-semibold"
+                  className="text-sm sm:text-base lg:text-[18px] font-semibold"
                   style={{ 
                     color: 'var(--color-primary-darkest)',
                     fontFamily: 'Poppins'
@@ -132,12 +132,12 @@ export default function FilterButton({ label }) {
                 >
                   Business Unit
                 </span>
-                <span className="text-xl">⚙️</span>
+                <span className="text-lg sm:text-xl lg:text-xl">⚙️</span>
               </div>
               <select
                 value={filters.businessUnit1}
                 onChange={(e) => handleChange('businessUnit1', e.target.value)}
-                className="w-full h-[38px] rounded-[8px] border-none bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full h-8 sm:h-9 lg:h-[38px] rounded-[6px] sm:rounded-[7px] lg:rounded-[8px] border-none bg-white px-2 sm:px-2.5 lg:px-3 text-xs sm:text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 style={{ fontFamily: 'Poppins' }}
               >
                 <option value="support">support</option>
@@ -148,12 +148,12 @@ export default function FilterButton({ label }) {
 
             {/* Business Unit 2 */}
             <div 
-              className="w-full rounded-[16px] p-4 flex flex-col gap-3"
+              className="w-full rounded-[12px] sm:rounded-[14px] lg:rounded-[16px] p-3 sm:p-3 lg:p-4 flex flex-col gap-2 sm:gap-2.5 lg:gap-3"
               style={{ backgroundColor: 'var(--color-primary-lightest)' }}
             >
               <div className="flex items-center justify-between">
                 <span 
-                  className="text-[18px] font-semibold"
+                  className="text-sm sm:text-base lg:text-[18px] font-semibold"
                   style={{ 
                     color: 'var(--color-primary-darkest)',
                     fontFamily: 'Poppins'
@@ -161,12 +161,12 @@ export default function FilterButton({ label }) {
                 >
                   Business Unit
                 </span>
-                <span className="text-xl">⚙️</span>
+                <span className="text-lg sm:text-xl lg:text-xl">⚙️</span>
               </div>
               <select
                 value={filters.businessUnit2}
                 onChange={(e) => handleChange('businessUnit2', e.target.value)}
-                className="w-full h-[38px] rounded-[8px] border-none bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full h-8 sm:h-9 lg:h-[38px] rounded-[6px] sm:rounded-[7px] lg:rounded-[8px] border-none bg-white px-2 sm:px-2.5 lg:px-3 text-xs sm:text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 style={{ fontFamily: 'Poppins' }}
               >
                 <option value="Platform A">Platform A</option>
@@ -176,12 +176,12 @@ export default function FilterButton({ label }) {
 
             {/* Status */}
             <div 
-              className="w-full rounded-[16px] p-4 flex flex-col gap-3"
+              className="w-full rounded-[12px] sm:rounded-[14px] lg:rounded-[16px] p-3 sm:p-3 lg:p-4 flex flex-col gap-2 sm:gap-2.5 lg:gap-3"
               style={{ backgroundColor: 'var(--color-primary-lightest)' }}
             >
               <div className="flex items-center justify-between">
                 <span 
-                  className="text-[18px] font-semibold"
+                  className="text-sm sm:text-base lg:text-[18px] font-semibold"
                   style={{ 
                     color: 'var(--color-primary-darkest)',
                     fontFamily: 'Poppins'
@@ -189,12 +189,12 @@ export default function FilterButton({ label }) {
                 >
                   Status
                 </span>
-                <span className="text-xl">👤</span>
+                <span className="text-lg sm:text-xl lg:text-xl">👤</span>
               </div>
               <select
                 value={filters.status}
                 onChange={(e) => handleChange('status', e.target.value)}
-                className="w-full h-[38px] rounded-[8px] border-none bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full h-8 sm:h-9 lg:h-[38px] rounded-[6px] sm:rounded-[7px] lg:rounded-[8px] border-none bg-white px-2 sm:px-2.5 lg:px-3 text-xs sm:text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 style={{ fontFamily: 'Poppins' }}
               >
                 <option value="Active">Active</option>
@@ -204,11 +204,11 @@ export default function FilterButton({ label }) {
           </div>
 
           {/* Footer actions */}
-          <div className="flex items-center justify-center pt-2">
+          <div className="flex items-center justify-center pt-1 sm:pt-1.5 lg:pt-2">
             <button
               type="button"
               onClick={handleReset}
-              className="w-full h-[44px] rounded-[12px] text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+              className="w-full h-8 sm:h-9 lg:h-[44px] rounded-[8px] sm:rounded-[10px] lg:rounded-[12px] text-xs sm:text-sm font-semibold text-white hover:opacity-90 transition-opacity"
               style={{ 
                 backgroundColor: 'var(--color-primary-darkest)',
                 fontFamily: 'Poppins'

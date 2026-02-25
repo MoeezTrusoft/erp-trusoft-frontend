@@ -40,15 +40,37 @@ export const createLayoutItem = (id, x = 0, y = 0, w = 4, h = 10) => ({
 });
 
 
-export const addItemToLayout = (layout, newItem, cols = GRID_CONFIG.COLS) => {
-  // Find the lowest y position
-  const maxY = layout.length === 0 ? 0 : Math.max(...layout.map((item) => item.y + item.h));
+const itemsOverlap = (ax, ay, aw, ah, bx, by, bw, bh) => {
+  return ax < bx + bw && ax + aw > bx && ay < by + bh && ay + ah > by;
+};
 
-  // Position new item at the bottom
+const findNextAvailablePosition = (layout, w, h, cols = GRID_CONFIG.COLS) => {
+  if (layout.length === 0) return { x: 0, y: 0 };
+
+  const maxY = Math.max(...layout.map((item) => item.y + item.h));
+
+  // Scan row by row, column by column for the first free slot
+  // x steps by 1 (integer columns); y steps by 0.5 to handle fractional heights
+  for (let y = 0; y <= maxY; y += 0.5) {
+    for (let x = 0; x <= cols - w; x += 1) {
+      const fits = !layout.some((item) =>
+        itemsOverlap(x, y, w, h, item.x, item.y, item.w, item.h)
+      );
+      if (fits) return { x, y };
+    }
+  }
+
+  // No space found in existing rows — append below
+  return { x: 0, y: maxY };
+};
+
+export const addItemToLayout = (layout, newItem, cols = GRID_CONFIG.COLS) => {
+  const { x, y } = findNextAvailablePosition(layout, newItem.w, newItem.h, cols);
+
   const positionedItem = {
     ...newItem,
-    x: 0,
-    y: maxY,
+    x,
+    y,
     maxH: newItem.h,
   };
 
