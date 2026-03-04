@@ -5,19 +5,19 @@ import ComponentShowcase from "../pages/ComponentShowcase";
 
 export const routes = [
   {
-    path: "hr/dashboard",
+    path: "/hr/dashboard",
     element: <Dashboard />,
   },
   {
-    path: "hr/recruitment",
+    path: "/hr/recruitment",
     element: <JobRequisitions />,
   },
   {
-    path: "components",
+    path: "/components",
     element: <ComponentShowcase />,
   },
   {
-    path: "example",
+    path: "/example",
     element: <ExampleScreen />,
   },
 ];

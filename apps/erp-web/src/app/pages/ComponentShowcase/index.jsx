@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { Textarea, Select, URLInput, PasswordInput, DateInput, CopyInput, PercentageInput, CurrencyInput, Input, NumberInput } from '@trusoft/ui';
 import '../../styles/scrollbar.css';
+import useDashboardLayout from '../../hooks/useDashboardLayout';
+import Breadcrumb from '../Dashboard/components/Breadcrumb';
 
 /**
  * Component Showcase / Test Page
  * Temporary page for testing and developing reusable UI components
  */
 const ComponentShowcase = () => {
+  // hook keeps layout consistent and provides error banner
+  const { error, clearError } = useDashboardLayout();
+
   const [values, setValues] = useState({
     inactive: '',
     active: '',
@@ -803,11 +808,33 @@ const ComponentShowcase = () => {
   ];
 
   return (
-    <div className="h-screen overflow-hidden custom-scrollbar">
-      <div className="h-full overflow-y-auto custom-scrollbar">
-        <div className="p-8 min-h-full">
+    <div
+      style={{ backgroundColor: '#efefef' }}
+      className="pl-2 pt-4 relative overflow-hidden h-screen flex flex-col"
+    >
+      {/* optional breadcrumb for context */}
+      <div className="px-6 pt-1.5 -mb-3 border-b border-gray-200">
+        <Breadcrumb pageTitle="Component Showcase" breadcrumbItems={[ 'Home', 'Components' ]} />
+      </div>
+
+      <div className="flex-1 p-4 pb-5 relative overflow-hidden flex flex-col">
+        {/* error banner from layout hook */}
+        {error && (
+          <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center justify-between">
+            <span className="text-red-800 text-sm">{error}</span>
+            <button
+              onClick={clearError}
+              className="text-red-600 hover:text-red-800 font-semibold"
+            >
+              ✕
+            </button>
+          </div>
+        )}
+
+        {/* scrollable content area */}
+        <div className="h-full overflow-y-auto custom-scrollbar p-8">
           {/* Textarea Section */}
-          <div className="mb-12 mt-12">
+          <div className="mb-12 mt-2">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Textarea Variants</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-8">
               {textareaVariants.map((variant) => (

@@ -2,7 +2,7 @@ import { Bell } from 'lucide-react';
 
 export const Header = ({ onMenuClick }) => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-neutral-1)] border-b border-[var(--color-neutral-3)]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[var(--color-gray-lightest)]">
       <div className="h-[73px] flex items-center justify-between relative px-5">
         {/* Left section */}
         <div className="flex items-center gap-4">
@@ -21,8 +21,8 @@ export const Header = ({ onMenuClick }) => {
         {/* Right section */}
         <div className="flex items-center gap-4">
           {/* Bell icon */}
-          <button className="relative p-2 hover:bg-[var(--color-neutral-2)] rounded-lg transition-colors">
-            <Bell className="w-[28px] h-[27.6px] text-[var(--color-neutral-10)] fill-[var(--color-neutral-10)]" />
+          <button className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <Bell className="w-[28px] h-[27.6px] text-[var(--color-black)] fill-[var(--color-black)]" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
           </button>
 
