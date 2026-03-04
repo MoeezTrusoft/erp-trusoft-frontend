@@ -142,7 +142,7 @@ const MenuItem = ({ icon: Icon, label, path, onClick, isCollapsed }) => {
         className={`flex items-center justify-center py-3 transition-colors ${
           isActive 
             ? 'text-[var(--color-primary-light)] font-medium border-l-4 border-[var(--color-primary-light)]' 
-            : 'text-white hover:bg-white/10'
+            : 'text-[var(--color-neutral-1)] hover:bg-[var(--color-neutral-1)]/10'
         }`}
         title={label}
       >
@@ -158,7 +158,7 @@ const MenuItem = ({ icon: Icon, label, path, onClick, isCollapsed }) => {
       className={`flex items-center gap-2 px-5 py-3 text-sm transition-colors ${
         isActive 
           ? 'text-[var(--color-primary-light)] font-medium border-l-4 border-[var(--color-primary-light)]' 
-          : 'text-white hover:bg-white/10'
+          : 'text-[var(--color-neutral-1)] hover:bg-[var(--color-neutral-1)]/10'
       }`}
     >
       {Icon && <Icon className="w-[18px] h-[18px]" />}
@@ -191,8 +191,8 @@ const TreeRailItem = ({ item, index, allItems, onLinkClick, hasChildren, isExpan
             isLevel1 ? 'pl-[52px] pr-4 py-1' : 'pl-[76px] pr-4 py-0.5'
           } ${
             isActive
-              ? 'text-[var(--color-primary-light)] font-medium bg-white/10'
-              : 'text-white/90 hover:text-white hover:bg-white/5'
+              ? 'text-[var(--color-primary-light)] font-medium bg-[var(--color-neutral-1)]/10'
+              : 'text-[var(--color-neutral-1)]/90 hover:text-[var(--color-neutral-1)] hover:bg-[var(--color-neutral-1)]/5'
           }`}
         >
           {/* TREE RAIL SYSTEM */}

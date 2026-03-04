@@ -1,18 +1,27 @@
 :root {
-  /* Main Theme Colors */
-  --color-primary-darkest: #035F5B;
-  --color-primary-dark: #00918D;
-  --color-primary-medium: #3FB5B0;
-  --color-primary-light: #64E2D3;
-  --color-primary-lighter: #6EFFED;
-  --color-primary-lightest: #B3E2DE;
+  /* Teal Scale (Primary colors) */
+  --color-teal-1: #B4E2DF;
+  --color-teal-2: #91E2D9;
+  --color-teal-3: #64E2D4;
+  --color-teal-4: #51CBC1;
+  --color-teal-5: #3EB5AF;
+  --color-teal-6: #27A39E;
+  --color-teal-7: #00918E;
+  --color-teal-8: #02807C;
+  --color-teal-9: #036F6A;
+  --color-teal-10: #045F58;
 
-  /* Secondary Colors */
-  --color-white: #FFFFFF;
-  --color-gray-lightest: #EDEDED;
-  --color-gray-light: #AFAFAF;
-  --color-gray-dark: #333333;
-  --color-black: #000000;
+  /* Neutral Scale */
+  --color-neutral-1: #FFFFFF;
+  --color-neutral-2: #F6F6F6;
+  --color-neutral-3: #EDEDED;
+  --color-neutral-4: #D8D8D8;
+  --color-neutral-5: #C3C3C3;
+  --color-neutral-6: #AFAFAF;
+  --color-neutral-7: #6E6E6E;
+  --color-neutral-8: #333333;
+  --color-neutral-9: #0D0D0D;
+  --color-neutral-10: #000000;
 
   /* Semantic Colors */
   --color-status-review: #FF9800;

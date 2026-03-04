@@ -35,18 +35,7 @@ export default function WidgetsPanel({ open, onClose, currentLayout = [], onAddW
 
   return (
     <>
-      {/* Backdrop */}
-      {/* {open && (
-        <div
-          className="fixed inset-0 z-40 transition-all duration-300"
-          style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',
-          }}
-          onClick={onClose}
-        />
-      )} */}
-
-      {/* Widget Panel - Level 1: Outer Wrapper (White) */}
+      
       <div
         className="fixed right-0 z-50 transition-all duration-300 ease-out flex flex-col  "
         style={{

@@ -49,8 +49,6 @@ const findNextAvailablePosition = (layout, w, h, cols = GRID_CONFIG.COLS) => {
 
   const maxY = Math.max(...layout.map((item) => item.y + item.h));
 
-  // Scan row by row, column by column for the first free slot
-  // x steps by 1 (integer columns); y steps by 0.5 to handle fractional heights
   for (let y = 0; y <= maxY; y += 0.5) {
     for (let x = 0; x <= cols - w; x += 1) {
       const fits = !layout.some((item) =>
@@ -60,7 +58,6 @@ const findNextAvailablePosition = (layout, w, h, cols = GRID_CONFIG.COLS) => {
     }
   }
 
-  // No space found in existing rows — append below
   return { x: 0, y: maxY };
 };
 
@@ -98,20 +95,17 @@ export const getDefaultLayout = () => [
   { i: 'payroll', x: 4, y: 9, w: 4, h: 2, minW: 3, maxW: 4, minH: 2, maxH: 2 },
 ];
 
-// Calculate grid item height in pixels
 
 export const calculateItemHeight = (gridRows, rowHeight, margin) => {
   return gridRows * rowHeight + (gridRows - 1) * margin[1];
 };
 
-// Calculate grid item width in pixels
 
 export const calculateItemWidth = (gridCols, containerWidth, cols, margin, padding) => {
   const availableWidth = containerWidth - padding[0] * 2 - (cols - 1) * margin[0];
   return availableWidth / cols;
 };
 
-// Validate layout items
 
 export const validateLayout = (layout) => {
   return (
@@ -132,7 +126,6 @@ export const validateLayout = (layout) => {
   );
 };
 
-// Generate a responsive layout for different breakpoints
 
 export const generateResponsiveLayout = (baseLayout, breakpoint) => {
   const breakpoints = {

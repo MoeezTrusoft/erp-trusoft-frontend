@@ -1,6 +1,7 @@
 import ExampleScreen from "../../modules/_example/screens/ExampleScreen.jsx";
 import Dashboard from "../pages/Dashboard";
-import Recruitment from "../pages/Recruitment/index.jsx";
+import JobRequisitions from "../pages/Recruitment/JobRequisitions.jsx";
+import ComponentShowcase from "../pages/ComponentShowcase";
 
 export const routes = [
   {
@@ -9,7 +10,11 @@ export const routes = [
   },
   {
     path: "hr/recruitment",
-    element: <Recruitment />,
+    element: <JobRequisitions />,
+  },
+  {
+    path: "components",
+    element: <ComponentShowcase />,
   },
   {
     path: "example",
