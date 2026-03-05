@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react';
-import useDashboardLayout from '../../hooks/useDashboardLayout';
-import SearchBar from './component/SearchBar';
-import FilterButton from './component/FilterButton';
-import Breadcrumb from './component/Breadcrumb';
+import useDashboardLayout from '../../../hooks/useDashboardLayout';
+import SearchBar from '../Dashboard/components/SearchBar';
+import FilterButton from '../Dashboard/components/FilterButton';
+import Breadcrumb from '../Dashboard/components/Breadcrumb';
 import PipelineBoard from './component/PipelineBoard';
 import { useContainerWidth } from 'react-grid-layout';
 

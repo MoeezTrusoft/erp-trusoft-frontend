@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import useDashboardLayout from '../../hooks/useDashboardLayout';
+import useDashboardLayout from '../../../hooks/useDashboardLayout';
 import SearchBar from '../Dashboard/components/SearchBar';
 import FilterButton from '../Dashboard/components/FilterButton';
 import Breadcrumb from '../Dashboard/components/Breadcrumb';
-import DataTable from '../../components/DataTable';
-import '../../styles/scrollbar.css';
+import DataTable from "../../../components/DataTable";
+import '../../../styles/scrollbar.css';
 
-// Sample data matching Figma design
 const MOCK_REQUISITIONS = [
   {
     _key: 'row-0',

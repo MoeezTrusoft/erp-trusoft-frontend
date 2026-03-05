@@ -71,17 +71,23 @@ const hrMenuData = [
   {
     id: 'recruitment',
     label: 'Recruitment',
+    path: '/hr/recruitment',
+    level: 1,
+  },
+
+  {
+    id: 'candidate-pipeline',
+    label: 'Candidate Pipeline',
     path: '/hr/candidate-pipeline',
     level: 1,
   },
 
   {
-    id: 'onboarding',
-    label: 'Onboarding',
+    id: 'talentpool',
+    label: 'Talent Pool',
     path: '/hr/talentpool',
     level: 1,
   },
-  // 1
   {
     id: 'time-attendance',
     label: 'Time & attendance',
@@ -476,7 +482,7 @@ export const Sidebar = () => {
       >
         <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide pt-4">
           <nav className="flex flex-col h-full relative">
-            <div className="py-2 max-h-[70%] overflow-y-auto">
+            <div className="py-2 max-h-[68%] overflow-y-auto">
               <div className="pt-2">
                 <MenuItem
                   icon={LayoutDashboard}

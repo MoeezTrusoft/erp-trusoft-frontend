@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Textarea, Select, URLInput, PasswordInput, DateInput, CopyInput, PercentageInput, CurrencyInput, Input, NumberInput } from '@trusoft/ui';
-import '../../styles/scrollbar.css';
-import useDashboardLayout from '../../hooks/useDashboardLayout';
+import '../../../styles/scrollbar.css';
+import useDashboardLayout from '../../../hooks/useDashboardLayout';
 import Breadcrumb from '../Dashboard/components/Breadcrumb';
 
 /**

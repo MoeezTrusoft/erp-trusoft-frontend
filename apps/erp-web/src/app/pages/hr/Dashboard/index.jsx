@@ -1,13 +1,13 @@
 import { useState, useCallback } from 'react';
 import ReactGridLayout, { useContainerWidth } from 'react-grid-layout';
-import useDashboardLayout from '../../hooks/useDashboardLayout';
+import useDashboardLayout from '../../../hooks/useDashboardLayout';
 import SearchBar from './components/SearchBar';
 import FilterButton from './components/FilterButton';
 import Breadcrumb from './components/Breadcrumb';
 import WidgetsPanel from './components/WidgetsPanel';
 import { getWidgetComponent, hasWidgetComponent } from './utils/widgetComponentMap';
 import { AVAILABLE_WIDGETS } from './constants/widgets';
-import { getDefaultLayout } from '../../utils/layoutManager';
+import { getDefaultLayout } from "../../../utils/layoutManager";
 
 const GRID_COLS = 12;
 const ROW_HEIGHT = 30;

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppShell } from '../layouts/AppShell.jsx';
-import Dashboard from '../pages/Dashboard';
+import Dashboard from '../pages/hr/Dashboard';
 import { routes } from '../routes/index.jsx';
 
 export function RouterProvider() {

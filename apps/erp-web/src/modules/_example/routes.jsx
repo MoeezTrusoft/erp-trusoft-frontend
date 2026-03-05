@@ -4,11 +4,11 @@ import { ExampleScreen } from './screens/ExampleScreen.jsx';
 
 export const jobRequisitionsRoutes = [
   {
-    path: '/recruitment/job-requisitions',
+    path: '/hr/recruitment/job-requisitions',
     element: <ExampleScreen />,
   },
    {
-    path: '/recruitment/job-requisitions',
+    path: '/hr/recruitment/job-requisitions',
     element: <ExampleScreen />,
   },
 ];

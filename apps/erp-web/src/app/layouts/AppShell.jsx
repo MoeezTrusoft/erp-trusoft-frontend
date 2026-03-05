@@ -14,7 +14,6 @@ export const AppShell = ({ children }) => {
   };
 
   return (
-    // Global app background (keep this white so colored sections sit on top)
     <div className="min-h-screen bg-white">
       <Header onMenuClick={toggleSidebar} />
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Breadcrumb from './component/Breadcrumb';
-import SearchBar from './component/SearchBar';
-import FilterButton from './component/FilterButton';
+import Breadcrumb from '../Dashboard/components/Breadcrumb';
+import SearchBar from '../Dashboard/components/SearchBar';
+import FilterButton from '../Dashboard/components/FilterButton';
 import TalentGrid from './component/TalentGrid';
 import CardsSection from './component/CardsSection';
 import RemoveCardModal from './component/RemoveCardModal';
@@ -161,9 +161,12 @@ export default function TalentPool() {
 };
 
   return (
-    <div className="h-screen flex flex-col relative overflow-hidden">
-      <div className="border-b border-gray-200 mb-4">
-        <Breadcrumb />
+    <div style={{ backgroundColor: '#efefef' }} className="pl-2 pt-4 h-screen flex flex-col relative overflow-hidden">
+      <div className="px-6 pt-1.5 border-b border-gray-200 mb-4">
+        <Breadcrumb
+          pageTitle="Talentpool"
+          breadcrumbItems={[ 'Home', 'HR', 'Talentpool' ]}
+        />
       </div>
 
       <div className="flex-1 flex flex-col">

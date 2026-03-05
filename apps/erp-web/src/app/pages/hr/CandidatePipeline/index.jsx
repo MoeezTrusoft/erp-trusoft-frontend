@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react';
-import useDashboardLayout from '../../hooks/useDashboardLayout';
-import SearchBar from './component/SearchBar';
-import FilterButton from './component/FilterButton';
-import Breadcrumb from './component/Breadcrumb';
+import useDashboardLayout from '../../../hooks/useDashboardLayout';
+import SearchBar from '../Dashboard/components/SearchBar';
+import FilterButton from '../Dashboard/components/FilterButton';
+import Breadcrumb from '../Dashboard/components/Breadcrumb';
 import PipelineBoard from './component/PipelineBoard';
 import { useContainerWidth } from 'react-grid-layout';
 
@@ -18,11 +18,15 @@ export default function Recruitment() {
   return (
     <>
         <div
-          className="relative h-screen flex flex-col"
+          style={{ backgroundColor: '#efefef' }}
+          className="pl-2 pt-4 relative h-screen flex flex-col"
         >
           {/* Breadcrumb Section */}
-          <div className="-mb-3 border-b border-gray-200">
-            <Breadcrumb />
+          <div className="px-6 pt-1.5 -mb-3 border-b border-gray-200">
+            <Breadcrumb
+              pageTitle="Candidate Pipeline"
+              breadcrumbItems={[ 'Home', 'HR', 'Candidate Pipeline' ]}
+            />
           </div>
 
           {/* Main Content Area */}
