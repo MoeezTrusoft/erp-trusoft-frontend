@@ -16,49 +16,49 @@ const hrMenuData = [
     id: 'hr-dashboard',
     label: 'Dashboard',
     path: '/hr/dashboard',
-    level: 1
+    level: 1,
   },
   {
     id: 'employee-mgmt',
     label: 'Employee Management',
     path: '/hr/employee-management',
     level: 1,
-    hasChildren: true
+    hasChildren: true,
   },
   {
     id: 'directory',
     label: 'Directory',
     path: '/hr/directory',
     level: 2,
-    parentId: 'employee-mgmt'
+    parentId: 'employee-mgmt',
   },
   {
     id: 'employee-profile',
     label: 'Employee Profile',
     path: '/hr/employee-profile',
     level: 2,
-    parentId: 'employee-mgmt'
+    parentId: 'employee-mgmt',
   },
   {
     id: 'self-service',
     label: 'Self service portal',
     path: '/hr/self-service',
     level: 2,
-    parentId: 'employee-mgmt'
+    parentId: 'employee-mgmt',
   },
   {
     id: 'manager-view',
     label: 'Manager View',
     path: '/hr/manager-view',
     level: 2,
-    parentId: 'employee-mgmt'
+    parentId: 'employee-mgmt',
   },
   {
     id: 'org-chart',
     label: 'Organization Chart',
     path: '/hr/org-chart',
     level: 2,
-    parentId: 'employee-mgmt'
+    parentId: 'employee-mgmt',
   },
   {
     id: 'management',
@@ -66,9 +66,9 @@ const hrMenuData = [
     path: '/hr/management',
     level: 2,
     parentId: 'employee-mgmt',
-    isLastChild: true
+    isLastChild: true,
   },
-    {
+  {
     id: 'recruitment',
     label: 'Recruitment',
     path: '/hr/candidate-pipeline',
@@ -81,53 +81,54 @@ const hrMenuData = [
     path: '/hr/talentpool',
     level: 1,
   },
+  // 1
   {
     id: 'time-attendance',
     label: 'Time & attendance',
     path: '/hr/time-attendance',
-    level: 1
+    level: 1,
   },
   {
     id: 'payroll',
     label: 'Payroll',
     path: '/hr/payroll',
-    level: 1
+    level: 1,
   },
   {
     id: 'performance',
     label: 'Performance Management',
     path: '/hr/performance',
-    level: 1
+    level: 1,
   },
   {
     id: 'learning',
     label: 'Learning & Development',
     path: '/hr/learning-development',
-    level: 1
+    level: 1,
   },
   {
     id: 'compliance',
     label: 'Compliance & Reporting',
     path: '/hr/compliance',
-    level: 1
+    level: 1,
   },
   {
     id: 'roles',
     label: 'Roles & Permissions',
     path: '/hr/roles-permissions',
-    level: 1
+    level: 1,
   },
   {
     id: 'notifications',
     label: 'Notification & Alert',
     path: '/hr/notifications',
-    level: 1
+    level: 1,
   },
   {
     id: 'integrations',
     label: 'Integrations',
     path: '/hr/integrations',
-    level: 1
+    level: 1,
   },
 ];
 
@@ -141,8 +142,8 @@ const MenuItem = ({ icon: Icon, label, path, onClick, isCollapsed }) => {
         to={path}
         onClick={onClick}
         className={`flex items-center justify-center py-3 transition-colors ${
-          isActive 
-            ? 'text-[var(--color-primary-light)] font-medium border-l-4 border-[var(--color-primary-light)]' 
+          isActive
+            ? 'text-[var(--color-primary-light)] font-medium border-l-4 border-[var(--color-primary-light)]'
             : 'text-[var(--color-neutral-1)] hover:bg-[var(--color-neutral-1)]/10'
         }`}
         title={label}
@@ -157,8 +158,8 @@ const MenuItem = ({ icon: Icon, label, path, onClick, isCollapsed }) => {
       to={path}
       onClick={onClick}
       className={`flex items-center gap-2 px-5 py-3 text-sm transition-colors ${
-        isActive 
-          ? 'text-[var(--color-primary-light)] font-medium border-l-4 border-[var(--color-primary-light)]' 
+        isActive
+          ? 'text-[var(--color-primary-light)] font-medium border-l-4 border-[var(--color-primary-light)]'
           : 'text-[var(--color-neutral-1)] hover:bg-[var(--color-neutral-1)]/10'
       }`}
     >
@@ -169,7 +170,17 @@ const MenuItem = ({ icon: Icon, label, path, onClick, isCollapsed }) => {
 };
 
 // Fixed Tree Rail System
-const TreeRailItem = ({ item, index, allItems, onLinkClick, hasChildren, isExpanded, onToggleChildren, childrenItems, isLastInSection }) => {
+const TreeRailItem = ({
+  item,
+  index,
+  allItems,
+  onLinkClick,
+  hasChildren,
+  isExpanded,
+  onToggleChildren,
+  childrenItems,
+  isLastInSection,
+}) => {
   const location = useLocation();
   const isActive = location.pathname === item.path;
   const isLevel1 = item.level === 1;
@@ -202,7 +213,7 @@ const TreeRailItem = ({ item, index, allItems, onLinkClick, hasChildren, isExpan
             {!isFirstItem && (
               <div className="absolute left-[29.5px] top-0 h-1/2 w-px bg-white/30"></div>
             )}
-            
+
             {/* Bottom half - render unless this is the last item in section AND not expanded */}
             {(!isLastInSection || isExpanded) && (
               <div className="absolute left-[29.5px] bottom-0 h-1/2 w-px bg-white/30"></div>
@@ -214,27 +225,26 @@ const TreeRailItem = ({ item, index, allItems, onLinkClick, hasChildren, isExpan
             )}
           </div>
 
-          <span className="relative z-10">
-            {item.label}
-          </span>
+          <span className="relative z-10">{item.label}</span>
 
-          <ChevronDown 
+          <ChevronDown
             className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
           />
         </div>
 
         {/* Children items */}
-        {isExpanded && employeeMgmtChildren.map((childItem, childIndex) => (
-          <TreeRailItem
-            key={childItem.id}
-            item={childItem}
-            index={childIndex}
-            allItems={employeeMgmtChildren}
-            onLinkClick={onLinkClick}
-            childrenItems={employeeMgmtChildren}
-            isLastInSection={false}
-          />
-        ))}
+        {isExpanded &&
+          employeeMgmtChildren.map((childItem, childIndex) => (
+            <TreeRailItem
+              key={childItem.id}
+              item={childItem}
+              index={childIndex}
+              allItems={employeeMgmtChildren}
+              onLinkClick={onLinkClick}
+              childrenItems={employeeMgmtChildren}
+              isLastInSection={false}
+            />
+          ))}
       </div>
     );
   }
@@ -253,7 +263,6 @@ const TreeRailItem = ({ item, index, allItems, onLinkClick, hasChildren, isExpan
     >
       {/* TREE RAIL SYSTEM */}
       <div className="absolute left-0 top-0 bottom-0 pointer-events-none w-full h-full">
-
         {/* === OUTER RAIL (Main Vertical Line) === */}
         {/* Top half - don't render for first item at level 1 */}
         {!(isLevel1 && isFirstItem) && (
@@ -284,22 +293,31 @@ const TreeRailItem = ({ item, index, allItems, onLinkClick, hasChildren, isExpan
         )}
       </div>
 
-      <span className="relative z-10">
-        {item.label}
-      </span>
+      <span className="relative z-10">{item.label}</span>
     </Link>
   );
 };
 
-const ExpandableMenuItem = ({ icon: Icon, label, items, isCollapsed, onLinkClick, isExpanded, onToggle, employeeMgmtExpanded, onToggleEmployeeMgmt }) => {
+const ExpandableMenuItem = ({
+  icon: Icon,
+  label,
+  items,
+  isCollapsed,
+  onLinkClick,
+  isExpanded,
+  onToggle,
+  employeeMgmtExpanded,
+  onToggleEmployeeMgmt,
+}) => {
   const location = useLocation();
   const isInSection = items.some((item) => location.pathname === item.path);
 
   if (isCollapsed) {
     return (
       <div
-        className={`flex items-center justify-center py-3 text-white hover:bg-white/10 transition-colors ${isInSection ? 'bg-white/5' : ''
-          }`}
+        className={`flex items-center justify-center py-3 text-white hover:bg-white/10 transition-colors ${
+          isInSection ? 'bg-white/5' : ''
+        }`}
         title={label}
       >
         <Icon className="w-5 h-5" />
@@ -308,23 +326,23 @@ const ExpandableMenuItem = ({ icon: Icon, label, items, isCollapsed, onLinkClick
   }
 
   // Get level 1 items and children
-  const level1Items = items.filter(item => item.level === 1);
-  const employeeMgmtChildren = items.filter(item => item.parentId === 'employee-mgmt');
+  const level1Items = items.filter((item) => item.level === 1);
+  const employeeMgmtChildren = items.filter((item) => item.parentId === 'employee-mgmt');
 
   return (
     <div>
       {/* HR Header with Outward Bulge Shape */}
-      <div 
-        className="relative w-full my-1 overflow-hidden cursor-pointer"
-        onClick={onToggle}
-      >
+      <div className="relative w-full my-1 overflow-hidden cursor-pointer" onClick={onToggle}>
         {/* Background Shape using SVG */}
         <svg
           className="absolute inset-0 w-full h-full"
           preserveAspectRatio="none"
           viewBox="0 0 278 44"
         >
-          <path d="M252.845 7.7027C267.293 7.37838 275.635 2.43243 278 0V45C273.872 38.8378 259.51 36.4865 252.845 36.0811H0V7.7027C78.2614 7.83784 238.396 8.02703 252.845 7.7027Z" fill="var(--color-primary-light)" />
+          <path
+            d="M252.845 7.7027C267.293 7.37838 275.635 2.43243 278 0V45C273.872 38.8378 259.51 36.4865 252.845 36.0811H0V7.7027C78.2614 7.83784 238.396 8.02703 252.845 7.7027Z"
+            fill="var(--color-primary-light)"
+          />
         </svg>
 
         {/* Content */}
@@ -333,7 +351,7 @@ const ExpandableMenuItem = ({ icon: Icon, label, items, isCollapsed, onLinkClick
             <Icon className="w-[18px] h-[18px]" />
             <span>{label}</span>
           </div>
-          <ChevronDown 
+          <ChevronDown
             className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
           />
         </div>
@@ -382,9 +400,7 @@ const RoundedDropdownItem = ({ icon: Icon, label, onClick, isCollapsed }) => {
     >
       <div className="flex items-center gap-2">
         <Icon className="w-5 h-5" />
-        <span className="font-normal text-[15px] leading-[100%]">
-          {label}
-        </span>
+        <span className="font-normal text-[15px] leading-[100%]">{label}</span>
       </div>
       <ChevronDown className="w-3 h-3" />
     </button>
@@ -410,9 +426,7 @@ const SimpleMenuItem = ({ icon: Icon, label, onClick, isCollapsed }) => {
       className="w-full flex items-center gap-1 px-5 py-2 text-white hover:bg-white/10 transition-colors"
     >
       <Icon className="w-[18px] h-[18px]" />
-      <span className="font-normal text-[17px] leading-[100%]">
-        {label}
-      </span>
+      <span className="font-normal text-[17px] leading-[100%]">{label}</span>
     </button>
   );
 };
@@ -425,13 +439,13 @@ export const Sidebar = () => {
 
   // Auto-expand HR menu if user is on an HR page
   useEffect(() => {
-    const isOnHRPage = hrMenuData.some(item => location.pathname === item.path);
+    const isOnHRPage = hrMenuData.some((item) => location.pathname === item.path);
     if (isOnHRPage) {
       setIsHRExpanded(true);
-      
+
       // Also expand Employee Management if on a child page
       const isOnEmployeeMgmtPage = hrMenuData.some(
-        item => item.parentId === 'employee-mgmt' && location.pathname === item.path
+        (item) => item.parentId === 'employee-mgmt' && location.pathname === item.path
       );
       if (isOnEmployeeMgmtPage) {
         setIsEmployeeMgmtExpanded(true);
@@ -452,9 +466,10 @@ export const Sidebar = () => {
   };
 
   return (
-    <div className={`sticky top-16 left-0 bottom-0 h-[calc(100vh-4rem)] z-40 transition-all duration-300 ease-in-out 
-    ${isCollapsed ? 'min-w-16' : 'min-w-[18vw]'}`}>
-
+    <div
+      className={`sticky top-16 left-0 bottom-0 h-[calc(100vh-4rem)] z-40 transition-all duration-300 ease-in-out 
+    ${isCollapsed ? 'min-w-16' : 'min-w-[18vw]'}`}
+    >
       {/* Main Sidebar */}
       <aside
         className={`w-full h-full bg-[var(--color-primary-darkest)] text-white overflow-hidden flex flex-col`}
@@ -484,27 +499,11 @@ export const Sidebar = () => {
             </div>
 
             <div className="absolute bottom-3 w-full">
-              <RoundedDropdownItem
-                icon={Workflow}
-                label="BCP"
-                isCollapsed={isCollapsed}
-              />
-              <RoundedDropdownItem
-                icon={Cog}
-                label="Publisher"
-                isCollapsed={isCollapsed}
-              />
+              <RoundedDropdownItem icon={Workflow} label="BCP" isCollapsed={isCollapsed} />
+              <RoundedDropdownItem icon={Cog} label="Publisher" isCollapsed={isCollapsed} />
 
-              <SimpleMenuItem
-                icon={Settings}
-                label="Settings"
-                isCollapsed={isCollapsed}
-              />
-              <SimpleMenuItem
-                icon={LogOut}
-                label="Logout"
-                isCollapsed={isCollapsed}
-              />
+              <SimpleMenuItem icon={Settings} label="Settings" isCollapsed={isCollapsed} />
+              <SimpleMenuItem icon={LogOut} label="Logout" isCollapsed={isCollapsed} />
             </div>
           </nav>
         </div>
@@ -517,7 +516,9 @@ export const Sidebar = () => {
         title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
       >
-        <ChevronRight className={`transform transition-transform duration-300 ${isCollapsed ? 'rotate-0' : 'rotate-180'}`} />
+        <ChevronRight
+          className={`transform transition-transform duration-300 ${isCollapsed ? 'rotate-0' : 'rotate-180'}`}
+        />
       </button>
 
       <style jsx>{`
