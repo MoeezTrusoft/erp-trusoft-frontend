@@ -71,14 +71,15 @@ const hrMenuData = [
   {
     id: 'recruitment',
     label: 'Recruitment',
-    path: '/hr/recruitment',
-    level: 1
+    path: '/hr/candidate-pipeline',
+    level: 1,
   },
+
   {
     id: 'onboarding',
     label: 'Onboarding',
-    path: '/hr/onboarding',
-    level: 1
+    path: '/hr/talentpool',
+    level: 1,
   },
   {
     id: 'time-attendance',

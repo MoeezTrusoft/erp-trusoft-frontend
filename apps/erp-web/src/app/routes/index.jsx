@@ -1,23 +1,33 @@
-import ExampleScreen from "../../modules/_example/screens/ExampleScreen.jsx";
-import Dashboard from "../pages/Dashboard";
-import JobRequisitions from "../pages/Recruitment/JobRequisitions.jsx";
-import ComponentShowcase from "../pages/ComponentShowcase";
+import ExampleScreen from '../../modules/_example/screens/ExampleScreen.jsx';
+import Dashboard from '../pages/Dashboard';
+import JobRequisitions from '../pages/Recruitment/JobRequisitions.jsx';
+import ComponentShowcase from '../pages/ComponentShowcase';
+import RecruitmentPage from '../pages/CandidatePipeline/index.jsx';
+import TalentPoolPage from '../pages/TalentPool/index.jsx';
 
 export const routes = [
   {
-    path: "/hr/dashboard",
+    path: '/hr/dashboard',
     element: <Dashboard />,
   },
   {
-    path: "/hr/recruitment",
+    path: '/hr/job-requisitions',
     element: <JobRequisitions />,
   },
   {
-    path: "/components",
+    path: '/components',
     element: <ComponentShowcase />,
   },
   {
-    path: "/example",
+    path: '/hr/candidate-pipeline',
+    element: <RecruitmentPage />,
+  },
+  {
+    path: 'hr/talentpool',
+    element: <TalentPoolPage />,
+  },
+  {
+    path: '/example',
     element: <ExampleScreen />,
   },
 ];
