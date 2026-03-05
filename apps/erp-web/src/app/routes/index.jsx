@@ -17,7 +17,7 @@ export const routes = [
     element: <ComponentShowcase />,
   },
   {
-    path: "/example",
-    element: <ExampleScreen />,
+    // path: "/example",
+    // element: <ExampleScreen />,
   },
 ];
