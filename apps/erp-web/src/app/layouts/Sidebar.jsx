@@ -88,12 +88,12 @@ const hrMenuData = [
     path: '/hr/talentpool',
     level: 1,
   },
-  // {
-  //   id: 'onboarding',
-  //   label: 'Onboarding',
-  //   path: '/hr/onboarding',
-  //   level: 1,
-  // },
+  {
+    id: 'onboarding',
+    label: 'Onboarding',
+    path: '/hr/onboarding',
+    level: 1,
+  },
   {
     id: 'time-attendance',
     label: 'Time & attendance',
@@ -479,7 +479,7 @@ export const Sidebar = () => {
 
   return (
     <div
-      className={`sticky top-16 left-0 bottom-0 h-[calc(100vh-4rem)] z-40 transition-all duration-300 ease-in-out 
+      className={`sticky top-[77px] left-0 bottom-0 h-[calc(100vh-4rem)] z-40 transition-all duration-300 ease-in-out 
     ${isCollapsed ? 'min-w-16' : 'min-w-[18vw]'}`}
     >
       {/* Main Sidebar */}

@@ -20,10 +20,7 @@ export const AppShell = ({ children }) => {
       <div className="flex pt-14">
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
-        <main className="w-full overflow-x-hidden px-0 py-4">
-          {children}
-        </main>
-
+        <main className="w-full overflow-x-hidden px-0 py-4">{children}</main>
       </div>
     </div>
   );

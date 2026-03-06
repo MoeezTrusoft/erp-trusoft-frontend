@@ -3,7 +3,7 @@ import { Bell } from 'lucide-react';
 export const Header = ({ onMenuClick }) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[var(color-neutral-1)]">
-      <div className="h-[73px] flex items-center justify-between relative px-5">
+      <div className=" flex items-center justify-between relative p-5">
         {/* Left section */}
         <div className="flex items-center gap-4">
           {/* Logo */}

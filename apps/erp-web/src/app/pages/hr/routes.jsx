@@ -3,7 +3,7 @@ import JobRequisitions from './Recruitment/JobRequisitions.jsx';
 import ComponentShowcase from './ComponentShowcase';
 import RecruitmentPage from './CandidatePipeline/index.jsx';
 import TalentPoolPage from './TalentPool/index.jsx';
-
+import OnboardingPage from './Onboarding/Onboarding.jsx';
 
 export const hrRoutes = [
   {
@@ -30,8 +30,8 @@ export const hrRoutes = [
     path: '/hr/talentpool',
     element: <TalentPoolPage />,
   },
-  // {
-  //   path: '/hr/onboarding',
-  //   element: <OnboardingPage />,
-  // },
+  {
+    path: '/hr/onboarding',
+    element: <OnboardingPage />,
+  },
 ];
