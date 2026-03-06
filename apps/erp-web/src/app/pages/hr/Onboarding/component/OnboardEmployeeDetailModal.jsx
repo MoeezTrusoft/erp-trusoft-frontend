@@ -1,4 +1,4 @@
-import { FiX } from "react-icons/fi";
+// import { FiX } from "react-icons/fi";
 
 export default function OnboardEmployeeDetailModal({ isOpen, onClose, employee }) {
   if (!isOpen || !employee) return null;
@@ -21,7 +21,7 @@ export default function OnboardEmployeeDetailModal({ isOpen, onClose, employee }
           </h2>
 
           <button onClick={onClose}>
-            <FiX size={20} />
+            {/* <FiX size={20} /> */}
           </button>
         </div>
 

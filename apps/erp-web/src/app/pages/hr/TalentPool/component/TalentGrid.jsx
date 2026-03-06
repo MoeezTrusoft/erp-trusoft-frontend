@@ -2,7 +2,7 @@
 
   export default function TalentGrid({ talents, onRemove, onView }) {
     return (
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-3 gap-3">
         {talents.map((talent) => (
           <TalentCard 
           key={talent.id} 

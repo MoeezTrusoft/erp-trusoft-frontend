@@ -169,7 +169,7 @@ const MenuItem = ({ icon: Icon, label, path, onClick, isCollapsed }) => {
     <Link
       to={path}
       onClick={onClick}
-      className={`flex items-center gap-2 px-5 py-3 text-sm transition-colors ${
+      className={`flex items-center gap-2 px-5 py-1 text-sm transition-colors ${
         isActive
           ? 'text-[var(--color-primary-light)] font-medium border-l-4 border-[var(--color-primary-light)]'
           : 'text-[var(--color-neutral-1)] hover:bg-[var(--color-neutral-1)]/10'
@@ -237,7 +237,7 @@ const TreeRailItem = ({
             )}
           </div>
 
-          <span className="relative z-10">{item.label}</span>
+          <span className="relative z-10 text-xs">{item.label}</span>
 
           <ChevronDown
             className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
@@ -265,7 +265,7 @@ const TreeRailItem = ({
     <Link
       to={item.path}
       onClick={onLinkClick}
-      className={`flex items-center text-sm transition-colors relative ${
+      className={`flex items-center text-xs transition-colors relative ${
         isLevel1 ? 'pl-[52px] pr-4 py-1' : 'pl-[76px] pr-4 py-0.5'
       } ${
         isActive
@@ -359,7 +359,7 @@ const ExpandableMenuItem = ({
 
         {/* Content */}
         <div className="relative z-10 flex items-center justify-between px-6 py-2 text-sm font-medium text-[var(--color-primary-darkest)]">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 ">
             <Icon className="w-[18px] h-[18px]" />
             <span>{label}</span>
           </div>
@@ -408,11 +408,11 @@ const RoundedDropdownItem = ({ icon: Icon, label, onClick, isCollapsed }) => {
   return (
     <button
       onClick={onClick}
-      className="w-[calc(100%-2.5rem)] mx-5 mb-3 flex items-center justify-between px-3 py-2 text-white border border-white/30 rounded-full hover:bg-white/10 hover:border-white/50 transition-all"
+      className="w-[calc(100%-2.5rem)] mx-5 mb-3 flex items-center justify-between px-3 py-1 text-white border border-white/30 rounded-full hover:bg-white/10 hover:border-white/50 transition-all"
     >
       <div className="flex items-center gap-2">
-        <Icon className="w-5 h-5" />
-        <span className="font-normal text-[15px] leading-[100%]">{label}</span>
+        <Icon className="w-4 h-4" />
+        <span className="font-normal text-[12px] leading-[100%]">{label}</span>
       </div>
       <ChevronDown className="w-3 h-3" />
     </button>
@@ -437,8 +437,8 @@ const SimpleMenuItem = ({ icon: Icon, label, onClick, isCollapsed }) => {
       onClick={onClick}
       className="w-full flex items-center gap-1 px-5 py-2 text-white hover:bg-white/10 transition-colors"
     >
-      <Icon className="w-[18px] h-[18px]" />
-      <span className="font-normal text-[17px] leading-[100%]">{label}</span>
+      <Icon className="w-[16px] h-[16px]" />
+      <span className="font-light text-[14px] leading-[100%]">{label}</span>
     </button>
   );
 };
@@ -488,8 +488,8 @@ export const Sidebar = () => {
       >
         <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide pt-4">
           <nav className="flex flex-col h-full relative">
-            <div className="py-2 max-h-[68%] overflow-y-auto">
-              <div className="pt-2">
+            <div className="pb-2 max-h-[68%] overflow-y-auto">
+              <div className="pt-0">
                 <MenuItem
                   icon={LayoutDashboard}
                   label="Dashboard"
@@ -524,7 +524,7 @@ export const Sidebar = () => {
       {/* Sidebar Toggle Button (Green Chevron) - Visible on ALL screen sizes */}
       <button
         onClick={toggleCollapse}
-        className="flex absolute items-center justify-center bg-[var(--color-primary-darkest)] text-white hover:opacity-90 transition-opacity z-50 w-6 h-9 top-2 -right-5 rounded-r-full border border-white/20 border-l-0"
+        className="flex absolute items-center justify-center bg-[var(--color-primary-darkest)] text-white hover:opacity-90 transition-opacity z-50 w-6 h-9 top-0 -right-5 rounded-r-full border border-white/20 border-l-0"
         title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
       >
