@@ -45,4 +45,9 @@
   --color-priority-medium: #FF9800;
   --color-priority-low: #4CAF50;
 
+  /* Component Colors */
+  --color-tab-unselected: #56A29C;
+  --color-progress-start: #068F84;
+  --color-progress-mid: #35B9AC;
+
 }
