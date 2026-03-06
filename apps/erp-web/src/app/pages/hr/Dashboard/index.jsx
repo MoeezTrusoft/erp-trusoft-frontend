@@ -7,7 +7,7 @@ import Breadcrumb from './components/Breadcrumb';
 import WidgetsPanel from './components/WidgetsPanel';
 import { getWidgetComponent, hasWidgetComponent } from './utils/widgetComponentMap';
 import { AVAILABLE_WIDGETS } from './constants/widgets';
-import { getDefaultLayout } from "../../../utils/layoutManager";
+import { getDefaultLayout } from '../../../utils/layoutManager';
 
 const GRID_COLS = 12;
 const ROW_HEIGHT = 30;
@@ -35,15 +35,22 @@ const GridItem = ({ children, label, widgetId, onRemove }) => {
           title="Remove widget"
           type="button"
         >
-          <svg className="w-full h-full text-gray-500 hover:text-red-600 pointer-events-none" fill="currentColor" viewBox="0 0 20 20" style={{ pointerEvents: 'none' }}>
-            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+          <svg
+            className="w-full h-full text-gray-500 hover:text-red-600 pointer-events-none"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            style={{ pointerEvents: 'none' }}
+          >
+            <path
+              fillRule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
           </svg>
         </button>
       )}
       {/* Content */}
-      <div className="flex-1 flex flex-col overflow-hidden">
-        {children}
-      </div>
+      <div className="flex-1 flex flex-col overflow-hidden">{children}</div>
     </div>
   );
 };
@@ -53,14 +60,8 @@ export default function Dashboard() {
   const [widgetsOpen, setWidgetsOpen] = useState(false);
 
   // Use custom hook for layout management
-  const {
-    layout,
-    handleLayoutChange,
-    addItemToLayout,
-    removeItemFromLayout,
-    error,
-    clearError,
-  } = useDashboardLayout();
+  const { layout, handleLayoutChange, addItemToLayout, removeItemFromLayout, error, clearError } =
+    useDashboardLayout();
 
   // Use the container width hook for responsive grid
   const { width, containerRef, mounted } = useContainerWidth();
@@ -68,27 +69,30 @@ export default function Dashboard() {
   const gridReady = mounted && width > 0 && layout.length > 0;
 
   // Handle add widget from panel
-  const handleAddWidget = useCallback((widgetId) => {
-    if (!hasWidgetComponent(widgetId)) {
-      console.error(`No component found for widget: ${widgetId}`);
-      return;
-    }
+  const handleAddWidget = useCallback(
+    (widgetId) => {
+      if (!hasWidgetComponent(widgetId)) {
+        console.error(`No component found for widget: ${widgetId}`);
+        return;
+      }
 
-    const widgetConfig = AVAILABLE_WIDGETS[widgetId];
-    if (!widgetConfig) {
-      console.error(`No configuration found for widget: ${widgetId}`);
-      return;
-    }
+      const widgetConfig = AVAILABLE_WIDGETS[widgetId];
+      if (!widgetConfig) {
+        console.error(`No configuration found for widget: ${widgetId}`);
+        return;
+      }
 
-    // Create new layout item
-    const newItem = {
-      i: widgetId,
-      ...widgetConfig.defaultLayout,
-    };
+      // Create new layout item
+      const newItem = {
+        i: widgetId,
+        ...widgetConfig.defaultLayout,
+      };
 
-    addItemToLayout(newItem);
-    setWidgetsOpen(false);
-  }, [addItemToLayout]);
+      addItemToLayout(newItem);
+      setWidgetsOpen(false);
+    },
+    [addItemToLayout]
+  );
 
   // Reset to default layout (restores only the 7 main dashboard widgets)
   const handleResetLayout = useCallback(() => {
@@ -198,7 +202,7 @@ export default function Dashboard() {
 
                     return (
                       <div key={item.i}>
-                        <GridItem 
+                        <GridItem
                           label={widgetConfig.title}
                           widgetId={item.i}
                           onRemove={removeItemFromLayout}

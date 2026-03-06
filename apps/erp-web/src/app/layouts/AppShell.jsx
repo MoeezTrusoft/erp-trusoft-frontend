@@ -17,10 +17,10 @@ export const AppShell = ({ children }) => {
     <div className="min-h-screen bg-white">
       <Header onMenuClick={toggleSidebar} />
 
-      <div className="flex pt-14">
+      <div className="flex pt-[73px]">
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
-        <main className="w-full overflow-x-hidden px-0 py-4">{children}</main>
+        <main className="w-full overflow-x-hidden px-0">{children}</main>
       </div>
     </div>
   );

@@ -34,8 +34,32 @@ const PipelineBoard = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const performMove = (itemId, sourceCol, targetCol, targetIndex) => {
+    if (sourceCol === targetCol) {
+      const items = [...columns[sourceCol]];
+      const currentIndex = items.findIndex((i) => i.id === itemId);
+
+      if (currentIndex === -1) return;
+
+      const [movedItem] = items.splice(currentIndex, 1);
+      const safeIndex =
+        targetIndex === undefined || targetIndex === null
+          ? items.length
+          : Math.min(Math.max(targetIndex, 0), items.length);
+
+      items.splice(safeIndex, 0, movedItem);
+
+      setColumns({
+        ...columns,
+        [sourceCol]: items,
+      });
+      return;
+    }
+
     const sourceItems = [...columns[sourceCol]];
     const itemIndex = sourceItems.findIndex((i) => i.id === itemId);
+
+    if (itemIndex === -1) return;
+
     const [movedItem] = sourceItems.splice(itemIndex, 1);
 
     const targetItems = [...columns[targetCol]];

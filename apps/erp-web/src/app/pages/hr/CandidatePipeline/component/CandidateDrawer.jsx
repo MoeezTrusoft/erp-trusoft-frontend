@@ -1,8 +1,8 @@
 const CandidateDrawer = ({ isOpen, onClose, candidate }) => {
   return (
     <div
-      className={`absolute top-0 right-0 h-full w-[30%] bg-white rounded-l-2xl shadow-2xl transform transition-transform duration-300 ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
+      className={`fixed top-[228px] h-[calc(100vh-239px)] w-[25%] bg-white rounded-l-2xl shadow-2xl transform transition-transform duration-300 border-none z-50 ${
+        isOpen ? 'translate-x-0  right-6 ' : 'translate-x-full right-0'
       }`}
     >
       {candidate && (
