@@ -3,9 +3,8 @@ import useDashboardLayout from '../../../hooks/useDashboardLayout';
 import SearchBar from '../Dashboard/components/SearchBar';
 import FilterButton from '../Dashboard/components/FilterButton';
 import Breadcrumb from '../Dashboard/components/Breadcrumb';
-import PipelineBoard from './component/PipelineBoard';
 import { useContainerWidth } from 'react-grid-layout';
-
+import PipelineBoard from './component/Pipelineboard';
 
 export default function Recruitment() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,49 +16,43 @@ export default function Recruitment() {
 
   return (
     <>
-        <div
-          style={{ backgroundColor: '#efefef' }}
-          className="pl-2 pt-4 relative h-screen flex flex-col"
-        >
-          {/* Breadcrumb Section */}
-          <div className="px-6 pt-1.5 -mb-3 border-b border-gray-200">
-            <Breadcrumb
-              pageTitle="Candidate Pipeline"
-              breadcrumbItems={[ 'Home', 'HR', 'Candidate Pipeline' ]}
-            />
-          </div>
-
-          {/* Main Content Area */}
-          <div className="flex-1 pt-6 pb-5 overflow-x-auto overflow-y-hidden">
-            <div className="h-full flex flex-col">
-              {/* Error Banner */}
-              {error && (
-                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center justify-between">
-                  <span className="text-red-800 text-sm">{error}</span>
-                  <button
-                    onClick={clearError}
-                    className="text-red-600 hover:text-red-800 font-semibold"
-                  >
-                    ✕
-                  </button>
+      <div
+        style={{ backgroundColor: '#efefef' }}
+        className="px-6 py-4 h-[calc(100vh-3rem)] flex flex-col w-full relative"
+      >
+        <div className="px-2 pt-1.5 -mb-3 border-b border-gray-200">
+          <Breadcrumb
+            pageTitle="Candidate Pipeline"
+            breadcrumbItems={['Home', 'HR', 'Candidate Pipeline']}
+          />
+        </div>
+        <div className="py-4">
+          <div className="h-full flex flex-col w-full">
+            {error && (
+              <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center justify-between">
+                <span className="text-red-800 text-sm">{error}</span>
+                <button
+                  onClick={clearError}
+                  className="text-red-600 hover:text-red-800 font-semibold"
+                >
+                  ✕
+                </button>
+              </div>
+            )}
+            <div className="w-full px-6 py-4 bg-[var(--color-primary-medium)] rounded-t-xl mb-0 ">
+              <div className="flex items-center gap-4">
+                <div className="w-full">
+                  <SearchBar value={searchQuery} onChange={setSearchQuery} />
                 </div>
-              )}
-
-              {/* Search and Controls Row */}
-              <div className="px-6 py-4 bg-[var(--color-primary-medium)] rounded-t-xl mb-0 flex-shrink-0">
-                <div className="flex items-center gap-4">
-                  <div className="flex-1">
-                    <SearchBar value={searchQuery} onChange={setSearchQuery} />
-                  </div>
-                  <div className="flex gap-3 items-center">
-                    <FilterButton label="Filter & Sort" />
-                  </div>
+                <div className="flex gap-3 items-center">
+                  <FilterButton label="Filter & Sort" />
                 </div>
               </div>
-              <PipelineBoard />
             </div>
+            <PipelineBoard />
           </div>
         </div>
+      </div>
     </>
   );
 }

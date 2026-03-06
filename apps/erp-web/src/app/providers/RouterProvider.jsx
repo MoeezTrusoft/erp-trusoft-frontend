@@ -8,14 +8,12 @@ export function RouterProvider() {
     <BrowserRouter>
       <AppShell>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/hr/dashboard" element={<Dashboard />} />
 
           {/* All other routes */}
           {routes.map((route) => (
             <Route key={route.path} path={route.path} element={route.element} />
           ))}
-
-          <Route path="*" element={<Dashboard />} />
         </Routes>
       </AppShell>
     </BrowserRouter>

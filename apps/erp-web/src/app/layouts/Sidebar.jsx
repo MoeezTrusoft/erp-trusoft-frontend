@@ -88,6 +88,12 @@ const hrMenuData = [
     path: '/hr/talentpool',
     level: 1,
   },
+  // {
+  //   id: 'onboarding',
+  //   label: 'Onboarding',
+  //   path: '/hr/onboarding',
+  //   level: 1,
+  // },
   {
     id: 'time-attendance',
     label: 'Time & attendance',

@@ -30,4 +30,19 @@
   --color-neutral-8: #333333;
   --color-neutral-9: #0D0D0D;
   --color-neutral-10: #000000;
+
+  /* Secondary Colors */
+  --color-white: #FFFFFF;
+  --color-gray-lightest: #EDEDED;
+  --color-gray-light: #AFAFAF;
+  --color-gray-dark: #333333;
+  --color-black: #000000;
+
+  /* Semantic Colors */
+  --color-status-review: #FF9800;
+  --color-status-draft: #757575;
+  --color-priority-high: #F44336;
+  --color-priority-medium: #FF9800;
+  --color-priority-low: #4CAF50;
+
 }

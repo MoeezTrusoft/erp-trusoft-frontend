@@ -1,4 +1,3 @@
-
 const CandidateDrawer = ({ isOpen, onClose, candidate }) => {
   return (
     <div
@@ -10,6 +9,9 @@ const CandidateDrawer = ({ isOpen, onClose, candidate }) => {
         <div className="p-4 h-full overflow-y-auto flex flex-col gap-6">
           <div className="flex justify-end">
             {/* <FiX size={20} className="cursor-pointer" onClick={onClose} /> */}
+            <button onClick={onClose} className="text-red-600 hover:text-red-800 font-semibold">
+              ✕
+            </button>
           </div>
 
           {/* Profile Image */}

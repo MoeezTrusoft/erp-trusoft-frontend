@@ -121,7 +121,7 @@ const initialTalents = [
     skills: ['React', 'JavaScript', 'Tailwind'],
   },
   {
-    id: 15  ,
+    id: 15,
     name: 'Sara Ahmed',
     role: 'Backend Developer',
     experience: '4 Years',
@@ -137,9 +137,7 @@ export default function TalentPool() {
   const [selectedTalent, setSelectedTalent] = useState(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-  const filtered = talents.filter((t) =>
-    t.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filtered = talents.filter((t) => t.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
   const handleRemoveClick = (talent) => {
     setSelectedTalent(talent);
@@ -147,26 +145,24 @@ export default function TalentPool() {
   };
 
   const handleConfirmRemove = () => {
-    setTalents((prev) =>
-      prev.filter((t) => t.id !== selectedTalent.id)
-    );
+    setTalents((prev) => prev.filter((t) => t.id !== selectedTalent.id));
     setIsModalOpen(false);
   };
 
   // ✅ FIX ADDED (THIS WAS MISSING)
   const handleViewClick = (talent) => {
-  console.log("SETTING PROFILE OPEN", talent);
-  setSelectedTalent(talent);
-  setIsProfileOpen(true);
-};
+    console.log('SETTING PROFILE OPEN', talent);
+    setSelectedTalent(talent);
+    setIsProfileOpen(true);
+  };
 
   return (
-    <div style={{ backgroundColor: '#efefef' }} className="pl-2 pt-4 h-screen flex flex-col relative overflow-hidden">
-      <div className="px-6 pt-1.5 border-b border-gray-200 mb-4">
-        <Breadcrumb
-          pageTitle="Talentpool"
-          breadcrumbItems={[ 'Home', 'HR', 'Talentpool' ]}
-        />
+    <div
+      style={{ backgroundColor: '#efefef' }}
+      className="px-6 py-4 h-[calc(100vh-3rem)] flex flex-col w-full relative"
+    >
+      <div className="px-2 pb-4 pt-1.5 -mb-3 border-b border-gray-200">
+        <Breadcrumb pageTitle="Talentpool" breadcrumbItems={['Home', 'HR', 'Talentpool']} />
       </div>
 
       <div className="flex-1 flex flex-col">
@@ -176,21 +172,14 @@ export default function TalentPool() {
         >
           <div className="flex items-center gap-4">
             <div className="flex-1">
-              <SearchBar
-                value={searchQuery}
-                onChange={setSearchQuery}
-              />
+              <SearchBar value={searchQuery} onChange={setSearchQuery} />
             </div>
             <FilterButton label="Filter & Sort" />
           </div>
         </div>
 
         <CardsSection>
-          <TalentGrid
-            talents={filtered}
-            onRemove={handleRemoveClick}
-            onView={handleViewClick}
-          />
+          <TalentGrid talents={filtered} onRemove={handleRemoveClick} onView={handleViewClick} />
         </CardsSection>
       </div>
 

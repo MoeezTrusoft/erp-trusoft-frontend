@@ -4,6 +4,7 @@ import ComponentShowcase from './ComponentShowcase';
 import RecruitmentPage from './CandidatePipeline/index.jsx';
 import TalentPoolPage from './TalentPool/index.jsx';
 
+
 export const hrRoutes = [
   {
     path: '/hr/dashboard',
@@ -29,4 +30,8 @@ export const hrRoutes = [
     path: '/hr/talentpool',
     element: <TalentPoolPage />,
   },
+  // {
+  //   path: '/hr/onboarding',
+  //   element: <OnboardingPage />,
+  // },
 ];

@@ -32,7 +32,7 @@ const PipelineBoard = () => {
 
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  
+
   const performMove = (itemId, sourceCol, targetCol, targetIndex) => {
     const sourceItems = [...columns[sourceCol]];
     const itemIndex = sourceItems.findIndex((i) => i.id === itemId);
@@ -97,10 +97,11 @@ const PipelineBoard = () => {
 
   return (
     <div
-      className="relative h-[calc(100vh-15rem)] p-6 pb-4 overflow-hidden"
+      className="relative h-[calc(100vh-240px)] p-4 overflow-x-scroll overflow-y-hidden "
       style={{ background: 'var(--color-primary-lightest)' }}
+
     >
-      <div className="flex gap-4 h-full overflow-x-auto pb-2 dashboard-scroll">
+      <div className="flex gap-3 h-full overflow-x-auto overflow-y-hidden pb-3 dashboard-scroll">
         {colEntries.map(([columnId, items], index) => {
           const isLastColumn = index === lastIndex;
 
@@ -108,14 +109,10 @@ const PipelineBoard = () => {
             <div key={columnId} className="flex">
               <div
                 ref={(el) => (columnRefs.current[columnId] = el)}
-                className="min-w-[320px] flex-shrink-0 rounded-xl p-4 h-full overflow-y-auto"
+                className="w-[320px] flex-shrink-0 rounded-xl p-4 h-full overflow-y-auto overflow-x-hidden"
                 style={{
-                  backgroundColor: isLastColumn
-                    ? 'var(--color-gray-dark)'
-                    : 'var(--color-black)',
-                  color: isLastColumn
-                    ? 'var(--color-gray-light)'
-                    : 'var(--color-white)',
+                  backgroundColor: isLastColumn ? 'var(--color-gray-dark)' : 'var(--color-black)',
+                  color: isLastColumn ? 'var(--color-gray-light)' : 'var(--color-white)',
                 }}
               >
                 <div className="flex justify-between items-center mb-3">
@@ -147,9 +144,7 @@ const PipelineBoard = () => {
                   <Draggable
                     key={item.id}
                     position={{ x: 0, y: 0 }}
-                    onStop={(e) =>
-                      moveCard(item.id, columnId, e.clientX, e.clientY)
-                    }
+                    onStop={(e) => moveCard(item.id, columnId, e.clientX, e.clientY)}
                   >
                     <div
                       data-card-id={item.id}
@@ -165,9 +160,11 @@ const PipelineBoard = () => {
                       <div className="flex justify-between">
                         <h3
                           style={{
-                            color: isLastColumn
-                              ? 'var(--color-black)'
-                              : 'var(--color-white)',
+                            color: isLastColumn ? 'var(--color-black)' : 'var(--color-white)',
+                          }}
+                          onClick={() => {
+                            setSelectedCandidate(item);
+                            setIsDrawerOpen(true);
                           }}
                         >
                           {item.name}

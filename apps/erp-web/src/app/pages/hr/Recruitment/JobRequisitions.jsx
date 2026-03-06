@@ -357,7 +357,7 @@ export default function JobRequisitions() {
     <>
       <div
         style={{ backgroundColor: '#efefef' }}
-        className="pl-2 pt-4 relative overflow-hidden h-screen flex flex-col"
+        className="px-2 pt-4 relative overflow-hidden h-screen flex flex-col"
       >
         {/* Breadcrumb Section */}
         <div className="px-6 pt-1.5 -mb-3 border-b border-gray-200">
